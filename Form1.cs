@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace display_graphic_generator
 {
-    public partial class Form1 : Form
+    public partial class chooseDisplayForm : Form
     {
-        public Form1()
+        public chooseDisplayForm()
         {
             InitializeComponent();
+        }
+
+        private void chooseDisplayForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
