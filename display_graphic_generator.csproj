@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form7Segment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7Segment.Designer.cs">
+      <DependentUpon>Form7Segment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGraphicDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGraphicDisplay.Designer.cs">
+      <DependentUpon>FormGraphicDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLcd16x2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLcd16x2.Designer.cs">
+      <DependentUpon>FormLcd16x2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.en.resx">
@@ -59,6 +77,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7Segment.resx">
+      <DependentUpon>Form7Segment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGraphicDisplay.resx">
+      <DependentUpon>FormGraphicDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLcd16x2.resx">
+      <DependentUpon>FormLcd16x2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
