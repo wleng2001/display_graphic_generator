@@ -64,9 +64,7 @@
     <Compile Include="FormGraphicDisplay.Designer.cs">
       <DependentUpon>FormGraphicDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLcd16x2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLcd16x2.cs" />
     <Compile Include="FormLcd16x2.Designer.cs">
       <DependentUpon>FormLcd16x2.cs</DependentUpon>
     </Compile>
