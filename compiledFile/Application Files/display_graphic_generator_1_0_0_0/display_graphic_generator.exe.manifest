@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="display_graphic_generator.exe" version="1.0.0.0" publicKeyToken="4411223f54a12014" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="display_graphic_generator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="display_graphic_generator.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opcje manifestu kontroli konta użytkownika
+          Jeśli chcesz zmienić poziom kontroli konta użytkownika systemu Windows, zastąp węzeł 
+          requestedExecutionLevel jednym z następujących.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Jeśli chcesz użyć wirtualizacji plików i rejestru do celów zgodności wstecznej, 
+         usuń węzeł requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="display_graphic_generator.exe" size="82392">
+      <assemblyIdentity name="display_graphic_generator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kPk5jOE3VuQQqV/p/wArmtVHR4/CMT66VboHDm06bj8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\display_graphic_generator.resources.dll" size="3584">
+      <assemblyIdentity name="display_graphic_generator.resources" version="1.0.0.0" language="en" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OLWrXFUNGfNdhseMqY8yAvFfLGx+URip8rrRZZManxs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="display_graphic_generator.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LAPTOPHPKAMIL\kamil" issuerKeyHash="534656fd6d9cb1f07acf4ef8511d34e33433f3fe" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>CMY4o7SeSy6RmwT/iXIQejsmaZjI8Lux8QmUyI1KvLY=</DigestValue></Reference></SignedInfo><SignatureValue>ZQRviRz+nMswu338m4JmMO1PyU+TiYorlZOoKEQNFZ+koZUjCo+Ffr5uqu4npVR8HlLFjP98pA2idoLMJkhlXKQkN6sRNZrEtZn/7/iaw0umh2XAGMo7sOubu3AWaDFcp588C7TQVg9ujQCuWMsVjUi8MlFN8jZlvdlv+jUlpdw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mSoaKmAsHWLG3YEZTm37bujgJZ/zkyssBFV3PfkqeDkf5YAHkvZUYQKVefSjPb2uqNxXl7V+le9Ja0iyUdwztozdeEapu8nyPvjJZp0Fuiv7Awmtwkc2VQjTstimW5h3AGkSlty4lSWQERfR1vu3KbGC+bX8U9ccv76UsJjjUGE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b6bc4a8dc89409f1b1bbf0c89869263b7a107289ff049b912e4b9eb4a338c608" Description="" Url=""><as:assemblyIdentity name="display_graphic_generator.exe" version="1.0.0.0" publicKeyToken="4411223f54a12014" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LAPTOPHPKAMIL\kamil</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>z0fKHJuTJi85wINPX0BH+kTu+0nY5G6R60Ez81dzQJ4=</DigestValue></Reference></SignedInfo><SignatureValue>fU2VEAHkcEBXFxqb2Fzh5h4AMYup5/W8xsVjwF+1pOxCm0g5H08weR5i7cYqI6xM73cToARb6C3SjUwUw8Rh9vST9Lss3GFCwppw7Th1a10tKpkg11R6tcUA3HHmiqk0SlBxVnuKFY0AICMuoIfePoPWwZlhwVel+YPT9YaP48I=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mSoaKmAsHWLG3YEZTm37bujgJZ/zkyssBFV3PfkqeDkf5YAHkvZUYQKVefSjPb2uqNxXl7V+le9Ja0iyUdwztozdeEapu8nyPvjJZp0Fuiv7Awmtwkc2VQjTstimW5h3AGkSlty4lSWQERfR1vu3KbGC+bX8U9ccv76UsJjjUGE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQLp6aH6GviKpIp+7TBq8rpDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDHiYATABBAFAAVABPAFAASABQAEsAQQBNAEkATABcAGsAYQBtAGkAbDAeFw0yNDA0MTEyMDEyMTFaFw0yNTA0MTIwMjEyMTFaMDExLzAtBgNVBAMeJgBMAEEAUABUAE8AUABIAFAASwBBAE0ASQBMAFwAawBhAG0AaQBsMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZKhoqYCwdYsbdgRlObftu6OAln/OTKywEVXc9+Sp4OR/lgAeS9lRhApV59KM9va6o3FeXtX6V70lrSLJR3DO2jN14Rqm7yfI++MlmnQW6K/sDCa3CRzZVCNOy2KZbmHcAaRKW3LiVJZARF9HW+7cpsYL5tfxT1xy/vpSwmONQYQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAEzR6IngWbV3iZO3DLnYZVty8AiwW0zv5sQ+Kx4aLTEVAN9DE6rP0fNpQLH/6VmuCsF0JuV35f3QRFhW0Ge+1mbKVLq3WnKutmUjsX0hLUUhwslkI44GU5QLbMN1KQHRy+grJCJj2FAbV7KmcCKspYy3cXh1tDtuvet/qG5QEM8D</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

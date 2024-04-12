@@ -21,5 +21,10 @@ namespace display_graphic_generator
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
