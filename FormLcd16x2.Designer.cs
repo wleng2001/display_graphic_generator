@@ -77,18 +77,19 @@
             // 
             // tabNameTextBox
             // 
-            this.tabNameTextBox.BackColor = System.Drawing.Color.White;
+            this.tabNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabNameTextBox.Location = new System.Drawing.Point(419, 58);
             this.tabNameTextBox.Name = "tabNameTextBox";
             this.tabNameTextBox.Size = new System.Drawing.Size(334, 27);
             this.tabNameTextBox.TabIndex = 0;
             this.tabNameTextBox.Text = "tabName";
+            this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_TextChanged);
             // 
             // tabContentTextBox
             // 
             this.tabContentTextBox.AcceptsTab = true;
-            this.tabContentTextBox.BackColor = System.Drawing.Color.White;
+            this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabContentTextBox.Location = new System.Drawing.Point(419, 116);
             this.tabContentTextBox.Multiline = true;
@@ -566,9 +567,9 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(678, 401);
+            this.generateButton.Location = new System.Drawing.Point(662, 390);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(75, 33);
+            this.generateButton.Size = new System.Drawing.Size(91, 39);
             this.generateButton.TabIndex = 50;
             this.generateButton.Text = "generate";
             this.generateButton.UseVisualStyleBackColor = true;

@@ -10,22 +10,6 @@ using System.Windows.Forms;
 
 namespace display_graphic_generator
 {
-    public class lcdContent
-    {
-        private byte[] content =
-            {
-                0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0
-            };
-        public byte[] Content
-        {
-            get { return content; }
-            set {}
-        }
-        public void set(byte row,  byte col, bool value)
-        {
-
-        }
-    };
     public partial class FormLcd16x2 : Form
     {
         public FormLcd16x2()
@@ -114,5 +98,26 @@ namespace display_graphic_generator
                 char0x4Button.BackColor = Color.Lime;
             }
         }
+
+        private void tabNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
+    public class lcdContent
+    {
+        private byte[] content =
+            {
+                0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0
+            };
+        public byte[] Content
+        {
+            get { return content; }
+            set { }
+        }
+        public void set(byte row, byte col, bool value)
+        {
+
+        }
+    };
 }
