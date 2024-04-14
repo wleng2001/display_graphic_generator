@@ -33,6 +33,19 @@
             this.tabNameLabel = new System.Windows.Forms.Label();
             this.tableContentLabel = new System.Windows.Forms.Label();
             this.generateButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.appearenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrixColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quantityOfMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabNameTextBox
@@ -58,8 +71,6 @@
             this.tabContentTextBox.Name = "tabContentTextBox";
             this.tabContentTextBox.Size = new System.Drawing.Size(334, 268);
             this.tabContentTextBox.TabIndex = 1;
-            this.tabContentTextBox.Text = "uint8_t tabName[] = {\r\n    B00000000,\r\n    B00000000,\r\n    B00000000,\r\n    B00000" +
-    "000,\r\n    B00000000,\r\n    B00000000,\r\n    B00000000,\r\n    B00000000\r\n};";
             this.tabContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
             // tabNameLabel
@@ -92,6 +103,96 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.button41_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.appearenceToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.TabIndex = 51;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // appearenceToolStripMenuItem
+            // 
+            this.appearenceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.matrixColorToolStripMenuItem,
+            this.quantityOfMatrixToolStripMenuItem});
+            this.appearenceToolStripMenuItem.Name = "appearenceToolStripMenuItem";
+            this.appearenceToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.appearenceToolStripMenuItem.Text = "appearence";
+            // 
+            // matrixColorToolStripMenuItem
+            // 
+            this.matrixColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redToolStripMenuItem,
+            this.greenToolStripMenuItem,
+            this.blueToolStripMenuItem,
+            this.greyToolStripMenuItem});
+            this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
+            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matrixColorToolStripMenuItem.Text = "matrix color";
+            // 
+            // quantityOfMatrixToolStripMenuItem
+            // 
+            this.quantityOfMatrixToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5});
+            this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Text = "1";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem3.Text = "2";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem4.Text = "3";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem5.Text = "4";
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.redToolStripMenuItem.Text = "red";
+            // 
+            // greenToolStripMenuItem
+            // 
+            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greenToolStripMenuItem.Text = "green";
+            // 
+            // blueToolStripMenuItem
+            // 
+            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Text = "blue";
+            // 
+            // greyToolStripMenuItem
+            // 
+            this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
+            this.greyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greyToolStripMenuItem.Text = "grey";
+            // 
             // FormLcd16x2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -102,13 +203,17 @@
             this.Controls.Add(this.tabNameLabel);
             this.Controls.Add(this.tabContentTextBox);
             this.Controls.Add(this.tabNameTextBox);
+            this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormLcd16x2";
             this.Text = "char";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.FormLcd16x2_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +226,17 @@
         private System.Windows.Forms.Label tabNameLabel;
         private System.Windows.Forms.Label tableContentLabel;
         private System.Windows.Forms.Button generateButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem appearenceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matrixColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quantityOfMatrixToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }

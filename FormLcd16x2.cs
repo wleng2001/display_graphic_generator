@@ -21,6 +21,7 @@ namespace display_graphic_generator
         private void FormLcd16x2_Load(object sender, EventArgs e)
         {
             btnPutOnForm(sender, e);
+            tabContentTextBox.Text = "uint8_t tabName[] = {\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n};";
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
