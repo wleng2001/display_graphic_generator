@@ -36,15 +36,17 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.appearenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quantityOfMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.greyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.negativeButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +124,7 @@
             this.appearenceToolStripMenuItem.Name = "appearenceToolStripMenuItem";
             this.appearenceToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.appearenceToolStripMenuItem.Text = "appearence";
+            this.appearenceToolStripMenuItem.Click += new System.EventHandler(this.appearenceToolStripMenuItem_Click);
             // 
             // matrixColorToolStripMenuItem
             // 
@@ -133,6 +136,36 @@
             this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
             this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.matrixColorToolStripMenuItem.Text = "matrix color";
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.redToolStripMenuItem.Text = "red";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
+            // 
+            // greenToolStripMenuItem
+            // 
+            this.greenToolStripMenuItem.Checked = true;
+            this.greenToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greenToolStripMenuItem.Text = "green";
+            this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
+            // 
+            // blueToolStripMenuItem
+            // 
+            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Text = "blue";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
+            // 
+            // greyToolStripMenuItem
+            // 
+            this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
+            this.greyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greyToolStripMenuItem.Text = "gray";
+            this.greyToolStripMenuItem.Click += new System.EventHandler(this.greyToolStripMenuItem_Click);
             // 
             // quantityOfMatrixToolStripMenuItem
             // 
@@ -148,56 +181,54 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem2.Text = "1";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem3.Text = "2";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem4.Text = "3";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem5.Text = "4";
             // 
-            // redToolStripMenuItem
+            // negativeButton
             // 
-            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.redToolStripMenuItem.Text = "red";
+            this.negativeButton.Location = new System.Drawing.Point(541, 390);
+            this.negativeButton.Name = "negativeButton";
+            this.negativeButton.Size = new System.Drawing.Size(91, 39);
+            this.negativeButton.TabIndex = 52;
+            this.negativeButton.Text = "negative";
+            this.negativeButton.UseVisualStyleBackColor = true;
+            this.negativeButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // greenToolStripMenuItem
+            // clearButton
             // 
-            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.greenToolStripMenuItem.Text = "green";
-            // 
-            // blueToolStripMenuItem
-            // 
-            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.blueToolStripMenuItem.Text = "blue";
-            // 
-            // greyToolStripMenuItem
-            // 
-            this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
-            this.greyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.greyToolStripMenuItem.Text = "grey";
+            this.clearButton.Location = new System.Drawing.Point(419, 390);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(91, 39);
+            this.clearButton.TabIndex = 53;
+            this.clearButton.Text = "clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // FormLcd16x2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clearButton);
+            this.Controls.Add(this.negativeButton);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.tableContentLabel);
             this.Controls.Add(this.tabNameLabel);
@@ -238,5 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.Button negativeButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }

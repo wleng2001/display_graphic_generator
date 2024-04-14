@@ -61,6 +61,10 @@ namespace display_graphic_generator
         byte height = 20;
         byte x = 100;
         byte y = 100;
+        Button[,] buttons = new Button[8,5];
+        Color buttonBackColor = Color.Lime;
+        Color buttonClickColor = Color.Gray;
+        Color buttonBorderColor = Color.Green;
         byte takeNumber(string text, byte place)
         {
             string number = "";
@@ -85,9 +89,9 @@ namespace display_graphic_generator
             bool status = !lC.get(row, (byte)(4 - col));
             lC.set(row, (byte)(4-col), status);
             if (status == true)
-                b.BackColor = Color.Gray;
+                b.BackColor = buttonClickColor;
             else
-                b.BackColor = Color.Lime;
+                b.BackColor = buttonBackColor;
         }
 
         Button btn(string name, byte width, byte height)
@@ -110,6 +114,7 @@ namespace display_graphic_generator
                 for(int j = 0; j < 5; j++)
                 {
                     Button b = btn(i.ToString()+" "+j.ToString(), width, height);
+                    buttons[i,j] = b;
                     b.Location = new Point(y+j*width, x+i*height);
                     Controls.Add(b);
                 }
@@ -119,6 +124,90 @@ namespace display_graphic_generator
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            greenToolStripMenuItem.Checked = true;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = false;
+            greyToolStripMenuItem.Checked = false;
+            buttonBackColor = Color.Lime;
+            foreach (Button b in buttons)
+            {
+                b.BackColor= Color.Lime;
+                b.FlatAppearance.BorderColor = Color.Green;
+            }
+        }
+
+        private void appearenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            greenToolStripMenuItem.Checked = false;
+            redToolStripMenuItem.Checked = true;
+            blueToolStripMenuItem.Checked = false;
+            greyToolStripMenuItem.Checked = false;
+            buttonBackColor = Color.Red;
+            foreach (Button b in buttons)
+            {
+                b.BackColor = Color.Red;
+                b.FlatAppearance.BorderColor = Color.FromArgb(192, 0, 0);
+            }
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            greenToolStripMenuItem.Checked = false;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = true;
+            greyToolStripMenuItem.Checked = false;
+            buttonBackColor = Color.FromArgb(0, 192, 192);
+            foreach (Button b in buttons)
+            {
+                b.BackColor = Color.FromArgb(0,192,192);
+                b.FlatAppearance.BorderColor = Color.FromArgb(0,64,64);
+            }
+        }
+
+        private void greyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            greenToolStripMenuItem.Checked = false;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = false;
+            greyToolStripMenuItem.Checked = true;
+            buttonBackColor = Color.FromArgb(224, 224, 224);
+            foreach (Button b in buttons)
+            {
+                b.BackColor = Color.FromArgb(224,224,224);
+                b.FlatAppearance.BorderColor = Color.Gray;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (Button b in buttons)
+            {
+                b.BackColor = buttonClickColor;
+            }
+            for (byte i = 0; i < 8; i++)
+            {
+                lC.Content[i] = 0xFF;
+            }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            foreach (Button b in buttons)
+            {
+                b.BackColor = buttonBackColor;
+            }
+            for(byte i = 0; i < 8; i++)
+            {
+                lC.Content[i] = 0;
+            }
         }
     }
     public class lcdContent
