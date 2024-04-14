@@ -29,7 +29,7 @@ namespace display_graphic_generator
         }
         private void button41_Click(object sender, EventArgs e)
         {
-            tabContentTextBox.Text = "uint8_t "+tabNameTextBox.Text+"[]={\n";
+            tabContentTextBox.Text = "uint8_t "+tabNameTextBox.Text+"[] = {\n";
             for(int i = 0; i < lC.Content.Length; i++)
             {
                 string number = Convert.ToString( lC.Content[i], toBase: 2).PadLeft(8,'0');
