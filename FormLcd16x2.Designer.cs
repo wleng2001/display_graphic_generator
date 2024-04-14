@@ -134,13 +134,13 @@
             this.blueToolStripMenuItem,
             this.greyToolStripMenuItem});
             this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
-            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.matrixColorToolStripMenuItem.Text = "matrix color";
             // 
             // redToolStripMenuItem
             // 
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.redToolStripMenuItem.Text = "red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
             // 
@@ -149,21 +149,21 @@
             this.greenToolStripMenuItem.Checked = true;
             this.greenToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.greenToolStripMenuItem.Text = "green";
             this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.blueToolStripMenuItem.Text = "blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // greyToolStripMenuItem
             // 
             this.greyToolStripMenuItem.Name = "greyToolStripMenuItem";
-            this.greyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greyToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.greyToolStripMenuItem.Text = "gray";
             this.greyToolStripMenuItem.Click += new System.EventHandler(this.greyToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             this.toolStripMenuItem4,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
             // 
             // toolStripMenuItem2

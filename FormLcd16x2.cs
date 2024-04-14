@@ -182,7 +182,7 @@ namespace display_graphic_generator
             foreach (Button b in buttons)
             {
                 b.BackColor = Color.FromArgb(224,224,224);
-                b.FlatAppearance.BorderColor = Color.Gray;
+                b.FlatAppearance.BorderColor = Color.FromArgb(64,64,64);
             }
         }
 
