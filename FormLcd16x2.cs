@@ -58,8 +58,8 @@ namespace display_graphic_generator
         lcdContent lC = new lcdContent(8);
         byte width = 20;
         byte height = 20;
-        byte x = 50;
-        byte y = 60;
+        byte x = 100;
+        byte y = 100;
         byte takeNumber(string text, byte place)
         {
             string number = "";
