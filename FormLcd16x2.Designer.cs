@@ -133,7 +133,7 @@
             this.blueToolStripMenuItem,
             this.greyToolStripMenuItem});
             this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
-            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.matrixColorToolStripMenuItem.Text = "matrix color";
             // 
             // redToolStripMenuItem
@@ -173,27 +173,28 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
+            this.quantityOfMatrixToolStripMenuItem.Click += new System.EventHandler(this.quantityOfMatrixToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem2.Text = "1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem3.Text = "2";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem5.Text = "4";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 

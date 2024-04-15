@@ -22,6 +22,7 @@ namespace display_graphic_generator
         {
             btnPutOnForm(sender, e);
             tabContentTextBox.Text = "uint8_t tabName[] = {\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n\tB00000000,\r\n};";
+            generateLcdContent(quantityOfMatrix);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -30,15 +31,19 @@ namespace display_graphic_generator
         }
         private void button41_Click(object sender, EventArgs e)
         {
-            tabContentTextBox.Text = "uint8_t "+tabNameTextBox.Text+"[] = {\n";
-            for(int i = 0; i < lC.Content.Length; i++)
+            tabContentTextBox.Text = "";
+            for(byte j=0; j<lC.Length; j++)
             {
-                string number = Convert.ToString( lC.Content[i], toBase: 2).PadLeft(8,'0');
+                tabContentTextBox.Text += "uint8_t " + tabNameTextBox.Text + j.ToString() + "[] = {\n";
+                for (int i = 0; i < lC[j].Content.Length; i++)
+                {
+                    string number = Convert.ToString(lC[j].Content[i], toBase: 2).PadLeft(8, '0');
+                    tabContentTextBox.AppendText(Environment.NewLine);
+                    tabContentTextBox.AppendText("\tB" + number + ",");
+                }
                 tabContentTextBox.AppendText(Environment.NewLine);
-                tabContentTextBox.AppendText( "\tB" + number+",");
+                tabContentTextBox.Text += "};\r\n";
             }
-            tabContentTextBox.AppendText(Environment.NewLine);
-            tabContentTextBox.Text +=  "};";
         }
 
         private void tabContentTextBox_TextChanged(object sender, EventArgs e)
@@ -56,16 +61,25 @@ namespace display_graphic_generator
 
         }
 
-        lcdContent lC = new lcdContent(8);
         byte width = 20;
         byte height = 20;
         byte x = 100;
         byte y = 100;
         static byte quantityOfMatrix = 1;
         Button[,,] buttons = new Button[quantityOfMatrix,8,5];
+        lcdContent[] lC = new lcdContent[quantityOfMatrix];
         Color buttonBackColor = Color.Lime;
         Color buttonClickColor = Color.Gray;
         Color buttonBorderColor = Color.Green;
+
+        void generateLcdContent(byte matrixQuantity)
+        {
+            lC = new lcdContent[quantityOfMatrix];
+            for(byte i = 0; i < lC.Length; i++)
+            {
+                lC[i] = new lcdContent();
+            }
+        }
         byte takeNumber(string text, byte place)
         {
             string number = "";
@@ -90,8 +104,8 @@ namespace display_graphic_generator
             byte row = takeNumber(name, place);
             place += (byte)((row.ToString().Length) + 1);
             byte col = takeNumber(name, place);
-            bool status = !lC.get(row, (byte)(4 - col));
-            lC.set(row, (byte)(4-col), status);
+            bool status = !lC[matrixNumber-1].get(row, (byte)(4 - col));
+            lC[matrixNumber - 1].set(row, (byte)(4-col), status);
             if (status == true)
                 b.BackColor = buttonClickColor;
             else
@@ -227,9 +241,12 @@ namespace display_graphic_generator
             {
                 b.BackColor = buttonClickColor;
             }
-            for (byte i = 0; i < 8; i++)
+            for(byte j = 0; j<lC.Length; j++) 
             {
-                lC.Content[i] = 0xFF;
+                for (byte i = 0; i < 8; i++)
+                {
+                    lC[j].Content[i] = 0xFF;
+                }
             }
         }
 
@@ -239,15 +256,22 @@ namespace display_graphic_generator
             {
                 b.BackColor = buttonBackColor;
             }
-            for(byte i = 0; i < 8; i++)
+            
+            for(byte j = 0;j<lC.Length; j++)
             {
-                lC.Content[i] = 0;
+                for (byte i = 0; i < 8; i++)
+                {
+                    lC[j].Content[i] = 0;
+                }
             }
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 1;
+            tabContentTextBox.ScrollBars = ScrollBars.None;
+            //tabContentTextBox.Font = new Font("Courier New", 10);
+            generateLcdContent(quantityOfMatrix);
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
@@ -256,6 +280,8 @@ namespace display_graphic_generator
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 2;
+            tabContentTextBox.ScrollBars = ScrollBars.Vertical;
+            generateLcdContent(quantityOfMatrix);
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
@@ -264,14 +290,30 @@ namespace display_graphic_generator
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 4;
+            tabContentTextBox.ScrollBars = ScrollBars.Vertical;
+            generateLcdContent(quantityOfMatrix);
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
+        }
+
+        private void quantityOfMatrixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class lcdContent
     {
         private byte[] content;
+        public lcdContent()
+        {
+            this.content = new byte[8];
+
+            for (int i = 0; i < this.content.Length; i++)
+            {
+                content[i] = 0;
+            }
+        }
         public lcdContent(byte rows)
         {
             this.content = new byte[rows];
