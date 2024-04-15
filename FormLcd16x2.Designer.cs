@@ -44,6 +44,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.functionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.negativeButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -59,7 +61,8 @@
             this.tabNameTextBox.Size = new System.Drawing.Size(334, 27);
             this.tabNameTextBox.TabIndex = 0;
             this.tabNameTextBox.Text = "tabName";
-            this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_TextChanged);
+            this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_Enter);
+            this.tabNameTextBox.Enter += new System.EventHandler(this.tabNameTextBox_Enter);
             // 
             // tabContentTextBox
             // 
@@ -108,7 +111,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.appearenceToolStripMenuItem});
+            this.appearenceToolStripMenuItem,
+            this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -133,7 +137,7 @@
             this.blueToolStripMenuItem,
             this.greyToolStripMenuItem});
             this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
-            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.matrixColorToolStripMenuItem.Text = "matrix color";
             // 
             // redToolStripMenuItem
@@ -173,30 +177,49 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
             this.quantityOfMatrixToolStripMenuItem.Click += new System.EventHandler(this.quantityOfMatrixToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem2.Text = "1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem3.Text = "2";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem5.Text = "4";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // functionsToolStripMenuItem
+            // 
+            this.functionsToolStripMenuItem.Checked = true;
+            this.functionsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.functionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoRefreshToolStripMenuItem});
+            this.functionsToolStripMenuItem.Name = "functionsToolStripMenuItem";
+            this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.functionsToolStripMenuItem.Text = "functions";
+            // 
+            // autoRefreshToolStripMenuItem
+            // 
+            this.autoRefreshToolStripMenuItem.Checked = true;
+            this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.autoRefreshToolStripMenuItem.Text = "auto refresh";
+            this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
             // negativeButton
             // 
@@ -266,5 +289,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.Button negativeButton;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.ToolStripMenuItem functionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autoRefreshToolStripMenuItem;
     }
 }

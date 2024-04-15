@@ -31,7 +31,7 @@ namespace display_graphic_generator
         }
         private void button41_Click(object sender, EventArgs e)
         {
-            generateTextBoxContent();
+            generateTextBoxContent(true);
         }
 
         private void tabContentTextBox_TextChanged(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace display_graphic_generator
                 b.BackColor = buttonClickColor;
             else
                 b.BackColor = buttonBackColor;
-            generateTextBoxContent();
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         Button btn(string name, byte width, byte height)
@@ -258,6 +258,7 @@ namespace display_graphic_generator
                     lC[j].Content[i] = 0xFF;
                 }
             }
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -274,6 +275,7 @@ namespace display_graphic_generator
                     lC[j].Content[i] = 0;
                 }
             }
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -285,6 +287,7 @@ namespace display_graphic_generator
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -295,6 +298,7 @@ namespace display_graphic_generator
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
@@ -305,11 +309,24 @@ namespace display_graphic_generator
             removeButtonMatrix();
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
+            generateTextBoxContent(autoRefreshMatrix);
         }
 
         private void quantityOfMatrixToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void autoRefreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            autoRefreshMatrix =! autoRefreshMatrix;
+            autoRefreshToolStripMenuItem.Checked = autoRefreshMatrix;
+            
+        }
+
+        private void tabNameTextBox_Enter(object sender, EventArgs e)
+        {
+            generateTextBoxContent(autoRefreshMatrix);
         }
     }
     public class lcdContent
