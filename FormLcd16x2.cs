@@ -124,6 +124,14 @@ namespace display_graphic_generator
                 }
             }
         }
+
+        void removeButtonMatrix()
+        {
+            foreach(Button b in buttons)
+            {
+                b.Dispose();
+            }
+        }
         private void btnPutOnForm(object sender, EventArgs e)
         {
             switch (quantityOfMatrix)
@@ -240,19 +248,24 @@ namespace display_graphic_generator
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 1;
-            
+            removeButtonMatrix();
+            buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 2;
+            removeButtonMatrix();
+            buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             quantityOfMatrix = 4;
+            removeButtonMatrix();
+            buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
         }
     }
