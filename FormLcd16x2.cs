@@ -31,19 +31,7 @@ namespace display_graphic_generator
         }
         private void button41_Click(object sender, EventArgs e)
         {
-            tabContentTextBox.Text = "";
-            for(byte j=0; j<lC.Length; j++)
-            {
-                tabContentTextBox.Text += "uint8_t " + tabNameTextBox.Text + j.ToString() + "[] = {\n";
-                for (int i = 0; i < lC[j].Content.Length; i++)
-                {
-                    string number = Convert.ToString(lC[j].Content[i], toBase: 2).PadLeft(8, '0');
-                    tabContentTextBox.AppendText(Environment.NewLine);
-                    tabContentTextBox.AppendText("\tB" + number + ",");
-                }
-                tabContentTextBox.AppendText(Environment.NewLine);
-                tabContentTextBox.Text += "};\r\n";
-            }
+            generateTextBoxContent();
         }
 
         private void tabContentTextBox_TextChanged(object sender, EventArgs e)
@@ -71,6 +59,7 @@ namespace display_graphic_generator
         Color buttonBackColor = Color.Lime;
         Color buttonClickColor = Color.Gray;
         Color buttonBorderColor = Color.Green;
+        bool autoRefreshMatrix = true;
 
         void generateLcdContent(byte matrixQuantity)
         {
@@ -78,6 +67,26 @@ namespace display_graphic_generator
             for(byte i = 0; i < lC.Length; i++)
             {
                 lC[i] = new lcdContent();
+            }
+        }
+
+        void generateTextBoxContent(bool generateContent)
+        {
+            if(generateContent) 
+            {
+                tabContentTextBox.Text = "";
+                for (byte j = 0; j < lC.Length; j++)
+                {
+                    tabContentTextBox.Text += "uint8_t " + tabNameTextBox.Text + j.ToString() + "[] = {\n";
+                    for (int i = 0; i < lC[j].Content.Length; i++)
+                    {
+                        string number = Convert.ToString(lC[j].Content[i], toBase: 2).PadLeft(8, '0');
+                        tabContentTextBox.AppendText(Environment.NewLine);
+                        tabContentTextBox.AppendText("\tB" + number + ",");
+                    }
+                    tabContentTextBox.AppendText(Environment.NewLine);
+                    tabContentTextBox.Text += "};\r\n";
+                }
             }
         }
         byte takeNumber(string text, byte place)
@@ -110,6 +119,7 @@ namespace display_graphic_generator
                 b.BackColor = buttonClickColor;
             else
                 b.BackColor = buttonBackColor;
+            generateTextBoxContent();
         }
 
         Button btn(string name, byte width, byte height)
