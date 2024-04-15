@@ -61,7 +61,8 @@ namespace display_graphic_generator
         byte height = 20;
         byte x = 100;
         byte y = 100;
-        Button[,] buttons = new Button[8,5];
+        static byte quantityOfMatrix = 1;
+        Button[,,] buttons = new Button[quantityOfMatrix,8,5];
         Color buttonBackColor = Color.Lime;
         Color buttonClickColor = Color.Gray;
         Color buttonBorderColor = Color.Green;
@@ -84,8 +85,11 @@ namespace display_graphic_generator
         {
             Button b = (Button)sender;
             string name = b.Name;
-            byte row = takeNumber(name, 0);
-            byte col = takeNumber(name, (byte)((row.ToString().Length)+1));
+            byte matrixNumber = takeNumber(name, 0);
+            byte place = (byte)(takeNumber(name, 0).ToString().Length + 1);
+            byte row = takeNumber(name, place);
+            place += (byte)((row.ToString().Length) + 1);
+            byte col = takeNumber(name, place);
             bool status = !lC.get(row, (byte)(4 - col));
             lC.set(row, (byte)(4-col), status);
             if (status == true)
@@ -107,18 +111,41 @@ namespace display_graphic_generator
             return b;
         }
 
-        private void btnPutOnForm(object sender, EventArgs e)
+        void generateButtonMatrix(byte matrixNumber, byte startPointY, byte startPointX)
         {
-            for(byte i = 0; i <8; i++)
+            for (int i = 0; i < 8; i++)
             {
-                for(int j = 0; j < 5; j++)
+                for (int j = 0; j < 5; j++)
                 {
-                    Button b = btn(i.ToString()+" "+j.ToString(), width, height);
-                    buttons[i,j] = b;
-                    b.Location = new Point(y+j*width, x+i*height);
+                    Button b = btn(matrixNumber.ToString()+" "+i.ToString() + " " + j.ToString(), width, height);
+                    b.Location = new Point(startPointY + j * width, startPointX + i * height);
                     Controls.Add(b);
+                    buttons[matrixNumber-1, i, j] = b;
                 }
             }
+        }
+        private void btnPutOnForm(object sender, EventArgs e)
+        {
+            switch (quantityOfMatrix)
+            {
+                case 1:
+                    generateButtonMatrix(1,x, y);
+                    break;
+
+                case 2:
+                    generateButtonMatrix(1,(byte)(x-40), y);
+                    generateButtonMatrix(2,(byte)(x - 40 + width * 5 + 5), y);
+                    break;
+                case 4:
+                    generateButtonMatrix(1,(byte)(x - 40), (byte)(y - 70));
+                    generateButtonMatrix(2,(byte)(x - 40+width*5+5), (byte)(y - 70));
+                    generateButtonMatrix(3,(byte)(x - 40), (byte)(y - 70+height*8+5));
+                    generateButtonMatrix(4,(byte)(x - 40 + width * 5 + 5), (byte)(y - 70 + height * 8 + 5));
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -208,6 +235,25 @@ namespace display_graphic_generator
             {
                 lC.Content[i] = 0;
             }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            quantityOfMatrix = 1;
+            
+            btnPutOnForm(sender, e);
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            quantityOfMatrix = 2;
+            btnPutOnForm(sender, e);
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            quantityOfMatrix = 4;
+            btnPutOnForm(sender, e);
         }
     }
     public class lcdContent
