@@ -127,10 +127,10 @@ namespace display_graphic_generator
             Button b = new Button();
             b.Name = name;
             b.Size = new Size(width, height);
-            b.BackColor = Color.Lime;
             b.FlatStyle = FlatStyle.Flat;
             b.FlatAppearance.BorderSize = 1;
-            b.FlatAppearance.BorderColor = Color.Green;
+            b.BackColor = buttonBackColor;
+            b.FlatAppearance.BorderColor = buttonBorderColor;
             b.Click += bClick;
             return b;
         }
@@ -143,6 +143,7 @@ namespace display_graphic_generator
                 {
                     Button b = btn(matrixNumber.ToString()+" "+i.ToString() + " " + j.ToString(), width, height);
                     b.Location = new Point(startPointY + j * width, startPointX + i * height);
+
                     Controls.Add(b);
                     buttons[matrixNumber-1, i, j] = b;
                 }
@@ -192,10 +193,11 @@ namespace display_graphic_generator
             blueToolStripMenuItem.Checked = false;
             greyToolStripMenuItem.Checked = false;
             buttonBackColor = Color.Lime;
+            buttonBorderColor = Color.Green;
             foreach (Button b in buttons)
             {
-                b.BackColor= Color.Lime;
-                b.FlatAppearance.BorderColor = Color.Green;
+                b.BackColor = buttonBackColor;
+                b.FlatAppearance.BorderColor = buttonBorderColor;
             }
         }
 
@@ -210,10 +212,11 @@ namespace display_graphic_generator
             blueToolStripMenuItem.Checked = false;
             greyToolStripMenuItem.Checked = false;
             buttonBackColor = Color.Red;
+            buttonBorderColor = Color.FromArgb(192, 0, 0);
             foreach (Button b in buttons)
             {
-                b.BackColor = Color.Red;
-                b.FlatAppearance.BorderColor = Color.FromArgb(192, 0, 0);
+                b.BackColor = buttonBackColor;
+                b.FlatAppearance.BorderColor = buttonBorderColor;
             }
         }
 
@@ -224,10 +227,11 @@ namespace display_graphic_generator
             blueToolStripMenuItem.Checked = true;
             greyToolStripMenuItem.Checked = false;
             buttonBackColor = Color.FromArgb(0, 192, 192);
+            buttonBorderColor = Color.FromArgb(0, 64, 64);
             foreach (Button b in buttons)
             {
-                b.BackColor = Color.FromArgb(0,192,192);
-                b.FlatAppearance.BorderColor = Color.FromArgb(0,64,64);
+                b.BackColor = buttonBackColor;
+                b.FlatAppearance.BorderColor = buttonBorderColor;
             }
         }
 
@@ -238,10 +242,11 @@ namespace display_graphic_generator
             blueToolStripMenuItem.Checked = false;
             greyToolStripMenuItem.Checked = true;
             buttonBackColor = Color.FromArgb(224, 224, 224);
+            buttonBorderColor = Color.FromArgb(64, 64, 64);
             foreach (Button b in buttons)
             {
-                b.BackColor = Color.FromArgb(224,224,224);
-                b.FlatAppearance.BorderColor = Color.FromArgb(64,64,64);
+                b.BackColor = buttonBackColor;
+                b.FlatAppearance.BorderColor = buttonBorderColor;
             }
         }
 
@@ -288,6 +293,9 @@ namespace display_graphic_generator
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
             generateTextBoxContent(autoRefreshMatrix);
+            toolStripMenuItem2.Checked = true;
+            toolStripMenuItem3.Checked = false;
+            toolStripMenuItem5.Checked = false;
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -299,6 +307,9 @@ namespace display_graphic_generator
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
             generateTextBoxContent(autoRefreshMatrix);
+            toolStripMenuItem2.Checked = false;
+            toolStripMenuItem3.Checked = true;
+            toolStripMenuItem5.Checked = false;
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
@@ -310,6 +321,9 @@ namespace display_graphic_generator
             buttons = new Button[quantityOfMatrix, 8, 5];
             btnPutOnForm(sender, e);
             generateTextBoxContent(autoRefreshMatrix);
+            toolStripMenuItem2.Checked = false;
+            toolStripMenuItem3.Checked = false;
+            toolStripMenuItem5.Checked = true;
         }
 
         private void quantityOfMatrixToolStripMenuItem_Click(object sender, EventArgs e)
