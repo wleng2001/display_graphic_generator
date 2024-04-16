@@ -16,5 +16,10 @@ namespace display_graphic_generator
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
