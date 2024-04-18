@@ -4,22 +4,311 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace display_graphic_generator
 {
+
     public partial class Form7Segment : Form
     {
+        static int yLocationDisplay = 125;
+        static int xLocationDisplayAlone = 125;
+        static int xLocationDisplayTwo = 65;
+        segment7Display d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
+        segment7Display d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
+        Color shineColor = Color.Red;
         public Form7Segment()
         {
             InitializeComponent();
+            for(int i = 0; i < 8; i++)
+            {
+                Controls.Add(d1[i]);
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-    }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+                private void Form7Segment_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            d1.restart();
+            d2.restart();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            d1.delete();
+            d2.delete();
+            quantityDisplay1ToolStrip.Checked = true;
+            quantityDisplay2ToolStrip.Checked = false;
+            d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
+            d1.changeColor(shineColor);
+            for (int i = 0;i < 8; i++)
+            {
+                Controls.Add(d1[i]);
+            }
+        }
+
+        private void quantityDisplay2ToolStrip_Click(object sender, EventArgs e)
+        {
+            d1.delete();
+            d2.delete();
+            quantityDisplay1ToolStrip.Checked = false;
+            quantityDisplay2ToolStrip.Checked = true;
+            d1 = new segment7Display(xLocationDisplayTwo, yLocationDisplay);
+            d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
+            d1.changeColor(shineColor);
+            d2.changeColor(shineColor);
+            for (int i = 0; i < 8; i++)
+            {
+                Controls.Add(d1[i]);
+                Controls.Add(d2[i]);
+            }
+        }
+
+        private void negativeButton_Click(object sender, EventArgs e)
+        {
+            d1.restart(true);
+            d2.restart(true);
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            d1.changeColor(Color.Red);
+            d2.changeColor(Color.Red);
+            shineColor = Color.Red;
+            redToolStripMenuItem.Checked = true;
+            blueToolStripMenuItem.Checked = false;
+            greenToolStripMenuItem.Checked = false;
+            yellowToolStripMenuItem.Checked = false;
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            d1.changeColor(Color.Cyan);
+            d2.changeColor(Color.Cyan);
+            shineColor = Color.Cyan;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = true;
+            greenToolStripMenuItem.Checked = false;
+            yellowToolStripMenuItem.Checked = false;
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            d1.changeColor(Color.Lime);
+            d2.changeColor(Color.Lime);
+            shineColor = Color.Lime;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = false;
+            greenToolStripMenuItem.Checked = true;
+            yellowToolStripMenuItem.Checked = false;
+        }
+
+        private void yellowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            d1.changeColor(Color.Yellow);
+            d2.changeColor(Color.Yellow);
+            shineColor = Color.Yellow;
+            redToolStripMenuItem.Checked = false;
+            blueToolStripMenuItem.Checked = false;
+            greenToolStripMenuItem.Checked = false;
+            yellowToolStripMenuItem.Checked = true;
+        }
+    };
+
+    public class segment7Display
+    {
+        Color clickColor = Color.Red;
+        Color BackColor = Color.FromArgb(64, 64, 64);
+        Color BorderColor = Color.Gray;
+        Button[] buttons = new Button[8];
+        private bool positiveDisplay;
+        public bool PositiveDisplay
+        {
+            get
+            {
+                return positiveDisplay;
+            }
+            set
+            {
+                positiveDisplay = value;
+                for(int i = 0;i < 8; i++)
+                {
+                    status[i] = !status[i];
+                }
+            }
+        }
+        private bool[] status = new bool[8];
+        int thick = 15;
+        int len = 50;
+
+        public Button this[int i]
+        {
+            get
+            {
+                return buttons[i];
+            }
+            set
+            {
+                buttons[i] = value;
+            }
+        }
+        private void buttonClick(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            int name = int.Parse(b.Name);
+
+            if (b.BackColor == BackColor)
+            {
+                b.BackColor = clickColor;
+                if (positiveDisplay)
+                {
+                    status[name] = true;
+                }
+                else
+                {
+                    status[name] = false;
+                }
+            }
+            else
+            {
+                b.BackColor = BackColor;
+                if (positiveDisplay)
+                {
+                    status[name] = false;
+                }
+                else
+                {
+                    status[name] = true;
+                }
+            }
+
+        }
+        public segment7Display(int x, int y, bool positiveDisplay = false)
+        {
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i] = new Button();
+                buttons[i].BackColor = BackColor;
+                buttons[i].FlatAppearance.BorderColor = BorderColor;
+                buttons[i].FlatStyle = FlatStyle.Standard;
+                buttons[i].Click += buttonClick;
+                buttons[i].Name = i.ToString();
+                if(positiveDisplay)
+                {
+                    status[i] = false;
+                }
+                else
+                {
+                    status[i] = true;
+                }
+            }
+            //A
+            buttons[0].Size = new Size(len, thick);
+            buttons[0].Location = new Point(x + thick, y);
+            //B
+            buttons[1].Size = new Size(thick, len);
+            buttons[1].Location = new Point(x + thick + len, y + thick);
+            //C
+            buttons[2].Size = new Size(thick, len);
+            buttons[2].Location = new Point(x + thick + len, y + thick + len + thick);
+            //D
+            buttons[3].Size = new Size(len, thick);
+            buttons[3].Location = new Point(x + thick, y + thick + len + thick + len);
+            //E
+            buttons[4].Size = new Size(thick, len);
+            buttons[4].Location = new Point(x, y + thick + len + thick);
+            //F
+            buttons[5].Size = new Size(thick, len);
+            buttons[5].Location = new Point(x, y + thick);
+            //G
+            buttons[6].Size = new Size(len, thick);
+            buttons[6].Location = new Point(x + thick, y + thick + len);
+            //DP
+            buttons[7].Size = new Size(thick, thick);
+            buttons[7].Location = new Point(x + thick + len + thick, y + thick + len + thick + len);
+            this.positiveDisplay = positiveDisplay;
+        }
+
+        private void restartStatus()
+        {
+            bool restartStatus;
+            if(positiveDisplay)
+            {
+                restartStatus = false;
+            }else
+            {
+                restartStatus = true;
+            }
+            for (int i = 0; i < status.Length; i++)
+            {
+                status[i] = restartStatus;
+            }
+        }
+        public void changeColor(Color shineColor, Color muteColor)
+        {
+            restartStatus();
+            clickColor = shineColor;
+            BackColor = muteColor;
+            foreach (var button in buttons)
+            {
+                button.BackColor = muteColor;
+            }
+        }
+
+        public void changeColor(Color shineColor)
+        {
+            changeColor(shineColor, BackColor);
+        }
+
+        public void restart(bool negative = false)
+        {
+            Color tempBackColor = BackColor;
+            if(negative)
+                changeColor(clickColor, clickColor);
+            else
+                changeColor(clickColor, BackColor);
+            BackColor = tempBackColor;
+        }
+
+        public void delete(){
+            foreach(var button in buttons)
+            {
+                button.Dispose();
+            }
+        }
+
+    };
 }
