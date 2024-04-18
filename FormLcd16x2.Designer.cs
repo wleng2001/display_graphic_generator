@@ -53,7 +53,7 @@
             // 
             // tabNameTextBox
             // 
-            this.tabNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabNameTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tabNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabNameTextBox.Location = new System.Drawing.Point(419, 58);
@@ -67,7 +67,7 @@
             // tabContentTextBox
             // 
             this.tabContentTextBox.AcceptsTab = true;
-            this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabContentTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabContentTextBox.Location = new System.Drawing.Point(419, 116);
@@ -177,7 +177,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
             this.quantityOfMatrixToolStripMenuItem.Click += new System.EventHandler(this.quantityOfMatrixToolStripMenuItem_Click);
             // 
@@ -186,7 +186,7 @@
             this.toolStripMenuItem2.Checked = true;
             this.toolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem2.Text = "1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
