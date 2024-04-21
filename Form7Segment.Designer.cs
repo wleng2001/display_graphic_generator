@@ -153,7 +153,7 @@
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
             this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
@@ -162,7 +162,7 @@
             this.negativeToolStripMenuItem.Checked = true;
             this.negativeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.negativeToolStripMenuItem.Text = "negative";
             // 
             // varName7textBox
@@ -175,6 +175,8 @@
             this.varName7textBox.Size = new System.Drawing.Size(323, 26);
             this.varName7textBox.TabIndex = 1;
             this.varName7textBox.Text = "varName";
+            this.varName7textBox.ModifiedChanged += new System.EventHandler(this.varName7textBox_ModifiedChanged);
+            this.varName7textBox.Enter += new System.EventHandler(this.varName7textBox_Enter);
             // 
             // varNameTextBox
             // 

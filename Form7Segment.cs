@@ -222,6 +222,16 @@ namespace display_graphic_generator
                 d.autoRefresh = autoRefresh;
             }
         }
+
+        private void varName7textBox_Enter(object sender, EventArgs e)
+        {
+            generateTextBoxContent(autoRefresh);
+        }
+
+        private void varName7textBox_ModifiedChanged(object sender, EventArgs e)
+        {
+            generateTextBoxContent(autoRefresh);
+        }
     };
 
     public class segment7Display
@@ -352,15 +362,12 @@ namespace display_graphic_generator
             this.positiveDisplay = positiveDisplay;
         }
 
-        private void restartStatus()
+        private void restartStatus(bool negative = false)
         {
-            bool restartStatus;
-            if(positiveDisplay)
+            bool restartStatus = negative;
+            if (!PositiveDisplay)
             {
-                restartStatus = false;
-            }else
-            {
-                restartStatus = true;
+                restartStatus =! restartStatus;
             }
             for (int i = 0; i < status.Length; i++)
             {
@@ -369,12 +376,18 @@ namespace display_graphic_generator
         }
         public void changeColor(Color shineColor, Color muteColor)
         {
-            restartStatus();
             clickColor = shineColor;
             BackColor = muteColor;
-            foreach (var button in buttons)
+            foreach(var button in buttons)
             {
-                button.BackColor = muteColor;
+                if(button.BackColor == muteColor)
+                {
+
+                }
+                else
+                {
+                    button.BackColor = shineColor;
+                }
             }
         }
 
@@ -383,20 +396,27 @@ namespace display_graphic_generator
             changeColor(shineColor, BackColor);
         }
 
+        public void restartColor(bool negative)
+        { 
+            foreach(var button in buttons)
+            {
+                if (negative)
+                {
+                    button.BackColor = clickColor;
+                }
+                else
+                {
+                    button.BackColor = BackColor;
+                }
+            }
+        }
+
         public void restart(bool negative = false)
         {
             bool value;
             Color tempBackColor = BackColor;
-            if (negative)
-            {
-                changeColor(clickColor, clickColor);
-                value = !negative;
-            }
-            else
-            {
-                changeColor(clickColor, BackColor);
-                value = negative;
-            }
+            restartStatus(negative);
+            restartColor(negative);
             BackColor = tempBackColor;
         }
 
