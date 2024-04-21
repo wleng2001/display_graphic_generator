@@ -44,7 +44,7 @@
             this.varName7textBox = new System.Windows.Forms.TextBox();
             this.varNameTextBox = new System.Windows.Forms.Label();
             this.varContentLabel = new System.Windows.Forms.Label();
-            this.tabContentTextBox = new System.Windows.Forms.TextBox();
+            this.varContentTextBox = new System.Windows.Forms.TextBox();
             this.generateButton = new System.Windows.Forms.Button();
             this.negativeButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.displayColorToolStripMenuItem,
             this.displayQuantityToolStripMenuItem});
             this.appeaToolStripMenuItem.Name = "appeaToolStripMenuItem";
-            this.appeaToolStripMenuItem.Size = new System.Drawing.Size(101, 26);
+            this.appeaToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
             this.appeaToolStripMenuItem.Text = "appearance";
             // 
             // displayColorToolStripMenuItem
@@ -80,7 +80,7 @@
             this.greenToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.displayColorToolStripMenuItem.Name = "displayColorToolStripMenuItem";
-            this.displayColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.displayColorToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.displayColorToolStripMenuItem.Text = "display color";
             // 
             // redToolStripMenuItem
@@ -88,28 +88,28 @@
             this.redToolStripMenuItem.Checked = true;
             this.redToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-            this.redToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.redToolStripMenuItem.Text = "red";
             this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.blueToolStripMenuItem.Text = "blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // greenToolStripMenuItem
             // 
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.greenToolStripMenuItem.Text = "green";
             this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.yellowToolStripMenuItem.Text = "yellow";
             this.yellowToolStripMenuItem.Click += new System.EventHandler(this.yellowToolStripMenuItem_Click);
             // 
@@ -119,7 +119,7 @@
             this.quantityDisplay1ToolStrip,
             this.quantityDisplay2ToolStrip});
             this.displayQuantityToolStripMenuItem.Name = "displayQuantityToolStripMenuItem";
-            this.displayQuantityToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.displayQuantityToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.displayQuantityToolStripMenuItem.Text = "display quantity";
             // 
             // quantityDisplay1ToolStrip
@@ -145,7 +145,7 @@
             this.autoRefreshToolStripMenuItem,
             this.negativeToolStripMenuItem});
             this.functionsToolStripMenuItem.Name = "functionsToolStripMenuItem";
-            this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.functionsToolStripMenuItem.Text = "functions";
             // 
             // autoRefreshToolStripMenuItem
@@ -153,15 +153,16 @@
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
+            this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
             // negativeToolStripMenuItem
             // 
             this.negativeToolStripMenuItem.Checked = true;
             this.negativeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.negativeToolStripMenuItem.Text = "negative";
             // 
             // varName7textBox
@@ -196,17 +197,18 @@
             this.varContentLabel.TabIndex = 4;
             this.varContentLabel.Text = "variable content";
             // 
-            // tabContentTextBox
+            // varContentTextBox
             // 
-            this.tabContentTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabContentTextBox.Location = new System.Drawing.Point(452, 155);
-            this.tabContentTextBox.Multiline = true;
-            this.tabContentTextBox.Name = "tabContentTextBox";
-            this.tabContentTextBox.Size = new System.Drawing.Size(323, 235);
-            this.tabContentTextBox.TabIndex = 3;
-            this.tabContentTextBox.Text = "uint8_t varName = B11111111;";
+            this.varContentTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.varContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.varContentTextBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.varContentTextBox.Location = new System.Drawing.Point(452, 155);
+            this.varContentTextBox.Multiline = true;
+            this.varContentTextBox.Name = "varContentTextBox";
+            this.varContentTextBox.Size = new System.Drawing.Size(323, 235);
+            this.varContentTextBox.TabIndex = 3;
+            this.varContentTextBox.Text = "uint8_t varName = B11111111;";
+            this.varContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
             // generateButton
             // 
@@ -217,6 +219,7 @@
             this.generateButton.TabIndex = 5;
             this.generateButton.Text = "generate";
             this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // negativeButton
             // 
@@ -250,7 +253,7 @@
             this.Controls.Add(this.negativeButton);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.varContentLabel);
-            this.Controls.Add(this.tabContentTextBox);
+            this.Controls.Add(this.varContentTextBox);
             this.Controls.Add(this.varNameTextBox);
             this.Controls.Add(this.varName7textBox);
             this.Controls.Add(this.menuStrip1);
@@ -284,7 +287,7 @@
         private System.Windows.Forms.TextBox varName7textBox;
         private System.Windows.Forms.Label varNameTextBox;
         private System.Windows.Forms.Label varContentLabel;
-        private System.Windows.Forms.TextBox tabContentTextBox;
+        private System.Windows.Forms.TextBox varContentTextBox;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Button negativeButton;
         private System.Windows.Forms.Button clearButton;

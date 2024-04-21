@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,8 +19,14 @@ namespace display_graphic_generator
         static int yLocationDisplay = 125;
         static int xLocationDisplayAlone = 125;
         static int xLocationDisplayTwo = 65;
-        segment7Display d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
-        segment7Display d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
+        byte displaysQuantity = 1;
+        bool autoRefresh = true;
+        static segment7Display d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
+        static segment7Display d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
+        segment7Display[] d =
+        {
+            d1, d2
+        };
         Color shineColor = Color.Red;
         public Form7Segment()
         {
@@ -72,7 +79,9 @@ namespace display_graphic_generator
             d2.delete();
             quantityDisplay1ToolStrip.Checked = true;
             quantityDisplay2ToolStrip.Checked = false;
+            displaysQuantity = 1;
             d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
+            d[0] = d1;
             d1.changeColor(shineColor);
             for (int i = 0;i < 8; i++)
             {
@@ -86,8 +95,11 @@ namespace display_graphic_generator
             d2.delete();
             quantityDisplay1ToolStrip.Checked = false;
             quantityDisplay2ToolStrip.Checked = true;
+            displaysQuantity = 2;
             d1 = new segment7Display(xLocationDisplayTwo, yLocationDisplay);
             d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
+            d[0] = d1;
+            d[1] = d2;
             d1.changeColor(shineColor);
             d2.changeColor(shineColor);
             for (int i = 0; i < 8; i++)
@@ -146,10 +158,60 @@ namespace display_graphic_generator
             greenToolStripMenuItem.Checked = false;
             yellowToolStripMenuItem.Checked = true;
         }
+
+        private void tabContentTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void generateTextBoxContent(bool refresh)
+        {
+            varContentTextBox.Text = "";
+            if (refresh)
+            {
+                for(byte i = 0; i < displaysQuantity; i++)
+                {
+                    varContentTextBox.Text += "uint8_t " + varName7textBox.Text+i+" = B";
+                    foreach (bool j in d[i].Status)
+                    {
+                        if (j)
+                        {
+                            varContentTextBox.Text += "1";
+                        }
+                        else
+                        {
+                            varContentTextBox.Text += "0";
+                        }
+                    }
+                    varContentTextBox.Text += ";\r\n";
+                }
+            }
+        }
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            generateTextBoxContent(true);
+        }
+
+        private void autoRefreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autoRefreshToolStripMenuItem.Checked)
+            {
+                autoRefreshToolStripMenuItem.Checked = false;
+                autoRefresh = false;
+
+            }
+            else
+            {
+                autoRefresh = true;
+                autoRefreshToolStripMenuItem.Checked = true;
+            }
+        }
     };
 
     public class segment7Display
     {
+        public delegate void updateTab(bool update);
+        public bool autoRefresh;
         Color clickColor = Color.Red;
         Color BackColor = Color.FromArgb(64, 64, 64);
         Color BorderColor = Color.Gray;
@@ -171,6 +233,11 @@ namespace display_graphic_generator
             }
         }
         private bool[] status = new bool[8];
+        public bool[] Status
+        {
+            get { return status; }
+            set { }
+        }
         int thick = 15;
         int len = 50;
 
@@ -184,6 +251,34 @@ namespace display_graphic_generator
             {
                 buttons[i] = value;
             }
+        }
+
+        public void setLocation(int x, int y)
+        {
+            //A
+            buttons[0].Size = new Size(len, thick);
+            buttons[0].Location = new Point(x + thick, y);
+            //B
+            buttons[1].Size = new Size(thick, len);
+            buttons[1].Location = new Point(x + thick + len, y + thick);
+            //C
+            buttons[2].Size = new Size(thick, len);
+            buttons[2].Location = new Point(x + thick + len, y + thick + len + thick);
+            //D
+            buttons[3].Size = new Size(len, thick);
+            buttons[3].Location = new Point(x + thick, y + thick + len + thick + len);
+            //E
+            buttons[4].Size = new Size(thick, len);
+            buttons[4].Location = new Point(x, y + thick + len + thick);
+            //F
+            buttons[5].Size = new Size(thick, len);
+            buttons[5].Location = new Point(x, y + thick);
+            //G
+            buttons[6].Size = new Size(len, thick);
+            buttons[6].Location = new Point(x + thick, y + thick + len);
+            //DP
+            buttons[7].Size = new Size(thick, thick);
+            buttons[7].Location = new Point(x + thick + len + thick, y + thick + len + thick + len);
         }
         private void buttonClick(object sender, EventArgs e)
         {
@@ -235,30 +330,7 @@ namespace display_graphic_generator
                     status[i] = true;
                 }
             }
-            //A
-            buttons[0].Size = new Size(len, thick);
-            buttons[0].Location = new Point(x + thick, y);
-            //B
-            buttons[1].Size = new Size(thick, len);
-            buttons[1].Location = new Point(x + thick + len, y + thick);
-            //C
-            buttons[2].Size = new Size(thick, len);
-            buttons[2].Location = new Point(x + thick + len, y + thick + len + thick);
-            //D
-            buttons[3].Size = new Size(len, thick);
-            buttons[3].Location = new Point(x + thick, y + thick + len + thick + len);
-            //E
-            buttons[4].Size = new Size(thick, len);
-            buttons[4].Location = new Point(x, y + thick + len + thick);
-            //F
-            buttons[5].Size = new Size(thick, len);
-            buttons[5].Location = new Point(x, y + thick);
-            //G
-            buttons[6].Size = new Size(len, thick);
-            buttons[6].Location = new Point(x + thick, y + thick + len);
-            //DP
-            buttons[7].Size = new Size(thick, thick);
-            buttons[7].Location = new Point(x + thick + len + thick, y + thick + len + thick + len);
+            setLocation(x, y);
             this.positiveDisplay = positiveDisplay;
         }
 
