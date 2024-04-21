@@ -89,11 +89,13 @@ namespace display_graphic_generator
             displaysQuantity = 1;
             d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
             d[0] = d1;
+            d1.UpdateTab = generateTextBoxContent;
             d1.changeColor(shineColor);
             for (int i = 0;i < 8; i++)
             {
                 Controls.Add(d1[i]);
             }
+            generateTextBoxContent(autoRefresh);
         }
 
         private void quantityDisplay2ToolStrip_Click(object sender, EventArgs e)
@@ -107,6 +109,8 @@ namespace display_graphic_generator
             d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
             d[0] = d1;
             d[1] = d2;
+            d1.UpdateTab = generateTextBoxContent;
+            d2.UpdateTab = generateTextBoxContent;
             d1.changeColor(shineColor);
             d2.changeColor(shineColor);
             for (int i = 0; i < 8; i++)
@@ -114,6 +118,7 @@ namespace display_graphic_generator
                 Controls.Add(d1[i]);
                 Controls.Add(d2[i]);
             }
+            generateTextBoxContent(autoRefresh);
         }
 
         private void negativeButton_Click(object sender, EventArgs e)
@@ -230,6 +235,27 @@ namespace display_graphic_generator
 
         private void varName7textBox_ModifiedChanged(object sender, EventArgs e)
         {
+            generateTextBoxContent(autoRefresh);
+        }
+
+        private void negativeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (negativeToolStripMenuItem.Checked)
+            {
+                negativeToolStripMenuItem.Checked = false;
+                foreach(var d in d)
+                {
+                    d.PositiveDisplay = true;
+                }
+            }
+            else
+            {
+                negativeToolStripMenuItem.Checked= true;
+                foreach (var d in d)
+                {
+                    d.PositiveDisplay = false;
+                }
+            }
             generateTextBoxContent(autoRefresh);
         }
     };
