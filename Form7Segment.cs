@@ -35,6 +35,9 @@ namespace display_graphic_generator
             {
                 Controls.Add(d1[i]);
             }
+            d1.UpdateTab = generateTextBoxContent;
+            d2.UpdateTab = generateTextBoxContent;
+            
 
         }
 
@@ -69,8 +72,12 @@ namespace display_graphic_generator
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            d1.restart();
-            d2.restart();
+            foreach(var i in d)
+            {
+                i.restart();
+            }
+            generateTextBoxContent(autoRefresh);
+
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -111,8 +118,11 @@ namespace display_graphic_generator
 
         private void negativeButton_Click(object sender, EventArgs e)
         {
-            d1.restart(true);
-            d2.restart(true);
+            foreach(var i in d)
+            {
+                i.restart(true);
+            }
+            generateTextBoxContent(autoRefresh);
         }
 
         private void redToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,12 +174,13 @@ namespace display_graphic_generator
 
         }
 
-        void generateTextBoxContent(bool refresh)
+        public void generateTextBoxContent(bool refresh)
         {
-            varContentTextBox.Text = "";
+            
             if (refresh)
             {
-                for(byte i = 0; i < displaysQuantity; i++)
+                varContentTextBox.Text = "";
+                for (byte i = 0; i < displaysQuantity; i++)
                 {
                     varContentTextBox.Text += "uint8_t " + varName7textBox.Text+i+" = B";
                     foreach (bool j in d[i].Status)
@@ -199,11 +210,16 @@ namespace display_graphic_generator
                 autoRefreshToolStripMenuItem.Checked = false;
                 autoRefresh = false;
 
+
             }
             else
             {
                 autoRefresh = true;
                 autoRefreshToolStripMenuItem.Checked = true;
+            }
+            foreach (var d in d)
+            {
+                d.autoRefresh = autoRefresh;
             }
         }
     };
@@ -211,7 +227,8 @@ namespace display_graphic_generator
     public class segment7Display
     {
         public delegate void updateTab(bool update);
-        public bool autoRefresh;
+        public updateTab UpdateTab;
+        public bool autoRefresh = true;
         Color clickColor = Color.Red;
         Color BackColor = Color.FromArgb(64, 64, 64);
         Color BorderColor = Color.Gray;
@@ -309,6 +326,7 @@ namespace display_graphic_generator
                     status[name] = true;
                 }
             }
+            UpdateTab(autoRefresh);
 
         }
         public segment7Display(int x, int y, bool positiveDisplay = false)
@@ -367,11 +385,18 @@ namespace display_graphic_generator
 
         public void restart(bool negative = false)
         {
+            bool value;
             Color tempBackColor = BackColor;
-            if(negative)
+            if (negative)
+            {
                 changeColor(clickColor, clickColor);
+                value = !negative;
+            }
             else
+            {
                 changeColor(clickColor, BackColor);
+                value = negative;
+            }
             BackColor = tempBackColor;
         }
 

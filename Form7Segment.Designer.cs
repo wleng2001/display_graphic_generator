@@ -207,7 +207,7 @@
             this.varContentTextBox.Name = "varContentTextBox";
             this.varContentTextBox.Size = new System.Drawing.Size(323, 235);
             this.varContentTextBox.TabIndex = 3;
-            this.varContentTextBox.Text = "uint8_t varName = B11111111;";
+            this.varContentTextBox.Text = "uint8_t varName0 = B11111111;";
             this.varContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
             // generateButton
