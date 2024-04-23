@@ -15,8 +15,8 @@ namespace display_graphic_generator
         Color shineColor = Color.White;
         Color muteColor = Color.Gray;
         Color borderColor = Color.Gray;
-        int xLocation = 60;
-        int yLocation = 60;
+        int xLocation = 23;
+        int yLocation = 25;
         int heightResolution = 48;
         int widthResolution = 48;
         buttonMatrix matrix;
@@ -45,7 +45,7 @@ namespace display_graphic_generator
             matrix = new buttonMatrix(widthResolution, heightResolution);
             matrix.setLocation(xLocation, yLocation);
             matrix.showButton();
-            generateMatrix(matrix);
+            generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
 
         }
 
@@ -81,7 +81,7 @@ namespace display_graphic_generator
                 whiteToolStripMenuItem.Checked = true;
                 blueToolStripMenuItem.Checked = false;
                 yellowToolStripMenuItem.Checked = false;
-                BackColor = Color.White;
+                shineColor = Color.White;
                 matrix.ShineColor = Color.White;
                 FormGraphicDisplay.ActiveForm.BackColor = chooseDisplayForm.ActiveForm.BackColor;
             }
@@ -94,7 +94,7 @@ namespace display_graphic_generator
                 whiteToolStripMenuItem.Checked = false;
                 blueToolStripMenuItem.Checked = true;
                 yellowToolStripMenuItem.Checked = false;
-                BackColor = Color.Blue;
+                shineColor = Color.Blue;
                 matrix.ShineColor = Color.Blue;
                 FormGraphicDisplay.ActiveForm.BackColor = chooseDisplayForm.ActiveForm.BackColor;
             }
@@ -107,7 +107,7 @@ namespace display_graphic_generator
                 whiteToolStripMenuItem.Checked = false;
                 blueToolStripMenuItem.Checked = false;
                 yellowToolStripMenuItem.Checked = true;
-                BackColor = Color.Yellow;
+                shineColor = Color.Yellow;
                 matrix.ShineColor = Color.Yellow;
                 FormGraphicDisplay.ActiveForm.BackColor = chooseDisplayForm.ActiveForm.BackColor;
             }
@@ -118,6 +118,20 @@ namespace display_graphic_generator
             matrix.restart(true);
         }
 
+        private void generateMatrix(int xLocation, int yLocation, int xResolution, int yResolution, int buttonWidth, int buttonHeight)
+        {
+            heightResolution = yResolution;
+            widthResolution = xResolution;
+            matrix = new buttonMatrix(widthResolution, heightResolution);
+            matrix.ButtonWidth = buttonWidth;
+            matrix.ButtonHeight = buttonHeight;
+            this.xLocation = xLocation;
+            this.yLocation = yLocation;
+            matrix.setLocation(xLocation, yLocation);
+            generateMatrix(matrix);
+            matrix.ShineColor = shineColor;
+            matrix.muteColor = muteColor;
+        }
         private void dimensions48x48ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!dimensions48x48ToolStripMenuItem.Checked)
@@ -126,17 +140,11 @@ namespace display_graphic_generator
                 dimensions48x48ToolStripMenuItem.Checked = true;
                 dimensionsOwnToolStripMenuItem.Checked = false;
                 matrix.remove();
-                heightResolution = 48;
+                xLocation = 23;
+                yLocation = 25;
                 widthResolution = 48;
-                matrix.ButtonWidth = 6;
-                matrix.ButtonHeight = 6;
-                xLocation = 60;
-                yLocation = 60;
-                matrix = new buttonMatrix(widthResolution, heightResolution);
-                matrix.setLocation(xLocation, yLocation);
-                generateMatrix(matrix);
-                matrix.ShineColor = shineColor;
-                matrix.muteColor = muteColor;
+                heightResolution = 48;
+                generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
             }
         }
 
