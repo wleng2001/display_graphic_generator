@@ -16,5 +16,20 @@ namespace display_graphic_generator
         {
             InitializeComponent();
         }
+
+        private void tabNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormGraphicDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
