@@ -12,6 +12,11 @@ namespace display_graphic_generator
 {
     public partial class FormGraphicDisplay : Form
     {
+        Color shineColor = Color.Blue;
+        Color muteColor = Color.Gray;
+        Color borderColor = Color.Gray;
+        int xLocation = 60;
+        int yLocation = 60;
         public FormGraphicDisplay()
         {
             InitializeComponent();
@@ -28,6 +33,11 @@ namespace display_graphic_generator
         }
 
         private void FormGraphicDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
         {
 
         }

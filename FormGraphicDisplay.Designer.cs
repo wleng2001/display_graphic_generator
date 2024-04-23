@@ -211,6 +211,7 @@
             this.clearButton.TabIndex = 6;
             this.clearButton.Text = "clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // negativeButton
             // 
