@@ -28,15 +28,79 @@ namespace display_graphic_generator
         {
             get
             {
-                return buttons[col, row];
+                return buttons[row, col];
             }
             set { }
         }
         private int buttonWidth = 5;
+        public int ButtonWidth
+        {
+            get
+            {
+                return buttonWidth;
+            }
+            set
+            {
+                if(buttonWidth != value) 
+                { 
+                    buttonWidth = value;
+                }
+            }
+        }
         private int buttonHeight = 5;
+        public int ButtonHeight
+        {
+            get
+            {
+                return buttonHeight;
+            }
+            set
+            {
+                if (buttonHeight != value)
+                {
+                    buttonHeight = value;
+                }
+            }
+        }
         bool[,] status;
         public Color muteColor = Color.Gray;
-        public Color shineColor = Color.Blue;
+        public Color MuteColor
+        {
+            get
+            {
+                return muteColor;
+            }
+            set
+            {
+                muteColor = value;
+                foreach (Button button in buttons)
+                {
+                    if (!(button.BackColor == shineColor))
+                    {
+                        button.BackColor = muteColor;
+                    }
+                }
+            }
+        }
+        private Color shineColor = Color.White;
+        public Color ShineColor
+        {
+            get
+            {
+                return shineColor;
+            }
+            set 
+            {
+                shineColor = value;
+                foreach(Button button in buttons)
+                {
+                    if(!(button.BackColor == muteColor))
+                    {
+                        button.BackColor = shineColor;
+                    }
+                }
+            }
+        }
         public Color borderColor = Color.FromArgb(64,64,64);
         public bool update = true;
         public delegate void buttonClickTask(bool update);
@@ -76,10 +140,10 @@ namespace display_graphic_generator
         }
         public buttonMatrix(int col, int row)
         {
-            this.col = col;
-            this.row = row;
-            buttons = new Button[col, row];
-            status = new bool[col, row];
+            this.col = row;
+            this.row = col;
+            buttons = new Button[this.col, this.row];
+            status = new bool[this.col, this.row];
             for(int i = 0; i< buttons.GetLength(0); i++)
             {
                 for(int j = 0; j< buttons.GetLength(1); j++)
@@ -157,6 +221,13 @@ namespace display_graphic_generator
             foreach (Button button in buttons)
             {
                 button.Show();
+            }
+        }
+        public void remove()
+        {
+            foreach(Button b in buttons)
+            {
+                b.Dispose();
             }
         }
     }

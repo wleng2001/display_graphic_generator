@@ -59,6 +59,7 @@
             this.tabNameTextBox.Name = "tabNameTextBox";
             this.tabNameTextBox.Size = new System.Drawing.Size(281, 26);
             this.tabNameTextBox.TabIndex = 0;
+            this.tabNameTextBox.Text = "tabName";
             this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_TextChanged);
             // 
             // tabNameLabel
@@ -89,7 +90,7 @@
             this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,20 +118,23 @@
             this.whiteToolStripMenuItem.Checked = true;
             this.whiteToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.whiteToolStripMenuItem.Text = "white";
+            this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.blueToolStripMenuItem.Text = "blue";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.yellowToolStripMenuItem.Text = "yellow";
+            this.yellowToolStripMenuItem.Click += new System.EventHandler(this.yellowToolStripMenuItem_Click);
             // 
             // matrixDimensionsToolStripMenuItem
             // 
@@ -148,6 +152,7 @@
             this.dimensions128x64ToolStripMenuItem.Name = "dimensions128x64ToolStripMenuItem";
             this.dimensions128x64ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dimensions128x64ToolStripMenuItem.Text = "128x64";
+            this.dimensions128x64ToolStripMenuItem.Click += new System.EventHandler(this.dimensions128x64ToolStripMenuItem_Click);
             // 
             // dimensions48x48ToolStripMenuItem
             // 
@@ -156,18 +161,21 @@
             this.dimensions48x48ToolStripMenuItem.Name = "dimensions48x48ToolStripMenuItem";
             this.dimensions48x48ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dimensions48x48ToolStripMenuItem.Text = "48x48";
+            this.dimensions48x48ToolStripMenuItem.Click += new System.EventHandler(this.dimensions48x48ToolStripMenuItem_Click);
             // 
             // dimensions10x10ToolStripMenuItem
             // 
             this.dimensions10x10ToolStripMenuItem.Name = "dimensions10x10ToolStripMenuItem";
             this.dimensions10x10ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dimensions10x10ToolStripMenuItem.Text = "10x10";
+            this.dimensions10x10ToolStripMenuItem.Click += new System.EventHandler(this.dimensions10x10ToolStripMenuItem_Click);
             // 
             // dimensionsOwnToolStripMenuItem
             // 
             this.dimensionsOwnToolStripMenuItem.Name = "dimensionsOwnToolStripMenuItem";
             this.dimensionsOwnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dimensionsOwnToolStripMenuItem.Text = "own";
+            this.dimensionsOwnToolStripMenuItem.Click += new System.EventHandler(this.dimensionsOwnToolStripMenuItem_Click);
             // 
             // functionsToolStripMenuItem
             // 
@@ -224,6 +232,7 @@
             this.negativeButton.TabIndex = 7;
             this.negativeButton.Text = "negative";
             this.negativeButton.UseVisualStyleBackColor = true;
+            this.negativeButton.Click += new System.EventHandler(this.negativeButton_Click);
             // 
             // FormGraphicDisplay
             // 
