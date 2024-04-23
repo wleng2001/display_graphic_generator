@@ -37,13 +37,13 @@
             this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.functionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixDimensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensions128x64ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensions48x48ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensions10x10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensionsOwnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.functionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabContentTextBox = new System.Windows.Forms.TextBox();
             this.tableContentLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             // 
             // tabNameTextBox
             // 
+            this.tabNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabNameTextBox.Location = new System.Drawing.Point(507, 56);
             this.tabNameTextBox.Name = "tabNameTextBox";
@@ -88,7 +89,7 @@
             this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,36 +117,20 @@
             this.whiteToolStripMenuItem.Checked = true;
             this.whiteToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.whiteToolStripMenuItem.Text = "white";
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.blueToolStripMenuItem.Text = "blue";
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.yellowToolStripMenuItem.Text = "yellow";
-            // 
-            // functionsToolStripMenuItem
-            // 
-            this.functionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoRefreshToolStripMenuItem});
-            this.functionsToolStripMenuItem.Name = "functionsToolStripMenuItem";
-            this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.functionsToolStripMenuItem.Text = "functions";
-            // 
-            // autoRefreshToolStripMenuItem
-            // 
-            this.autoRefreshToolStripMenuItem.Checked = true;
-            this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.autoRefreshToolStripMenuItem.Text = "auto refresh";
             // 
             // matrixDimensionsToolStripMenuItem
             // 
@@ -184,14 +169,32 @@
             this.dimensionsOwnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dimensionsOwnToolStripMenuItem.Text = "own";
             // 
+            // functionsToolStripMenuItem
+            // 
+            this.functionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoRefreshToolStripMenuItem});
+            this.functionsToolStripMenuItem.Name = "functionsToolStripMenuItem";
+            this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.functionsToolStripMenuItem.Text = "functions";
+            // 
+            // autoRefreshToolStripMenuItem
+            // 
+            this.autoRefreshToolStripMenuItem.Checked = true;
+            this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.autoRefreshToolStripMenuItem.Text = "auto refresh";
+            // 
             // tabContentTextBox
             // 
+            this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabContentTextBox.Location = new System.Drawing.Point(507, 113);
             this.tabContentTextBox.Multiline = true;
             this.tabContentTextBox.Name = "tabContentTextBox";
             this.tabContentTextBox.Size = new System.Drawing.Size(280, 296);
             this.tabContentTextBox.TabIndex = 4;
+            this.tabContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
             // tableContentLabel
             // 

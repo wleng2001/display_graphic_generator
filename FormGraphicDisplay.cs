@@ -17,9 +17,23 @@ namespace display_graphic_generator
         Color borderColor = Color.Gray;
         int xLocation = 60;
         int yLocation = 60;
+        int heightResolution = 48;
+        int widthResolution = 48;
+        buttonMatrix matrix;
         public FormGraphicDisplay()
         {
             InitializeComponent();
+            matrix = new buttonMatrix(widthResolution, heightResolution);
+            matrix.setLocation(xLocation, yLocation);
+            matrix.showButton();
+            for (int i = 0; i< widthResolution; i++)
+            {
+                for(int j = 0; j < heightResolution; j++)
+                {
+                    Button b = matrix[i, j];
+                    Controls.Add(b);
+                }
+            }
         }
 
         private void tabNameTextBox_TextChanged(object sender, EventArgs e)
@@ -38,6 +52,11 @@ namespace display_graphic_generator
         }
 
         private void clearButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabContentTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

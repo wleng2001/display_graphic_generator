@@ -23,12 +23,21 @@ namespace display_graphic_generator
             }
             set { } 
         }
-        private int buttonWidth;
-        private int buttonHeight;
+
+        public Button this[int col, int row]
+        {
+            get
+            {
+                return buttons[col, row];
+            }
+            set { }
+        }
+        private int buttonWidth = 5;
+        private int buttonHeight = 5;
         bool[,] status;
         public Color muteColor = Color.Gray;
         public Color shineColor = Color.Blue;
-        public Color borderColor = Color.Gray;
+        public Color borderColor = Color.FromArgb(64,64,64);
         public bool update = true;
         public delegate void buttonClickTask(bool update);
         public buttonClickTask ButtonClickTask;
@@ -75,7 +84,8 @@ namespace display_graphic_generator
             {
                 for(int j = 0; j< buttons.GetLength(1); j++)
                 {
-                    Button b = buttons[i,j];
+                    buttons[i, j] = new Button();
+                    Button b = buttons[i, j];
                     b.BackColor = muteColor;
                     b.FlatStyle = FlatStyle.Flat;
                     b.FlatAppearance.BorderColor = borderColor;
