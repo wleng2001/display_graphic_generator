@@ -38,6 +38,7 @@
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(518, 52);
             this.progressBar2.TabIndex = 1;
+            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
             // 
             // loadinLabel
             // 
@@ -59,6 +60,7 @@
             this.MaximizeBox = false;
             this.Name = "loadingForm";
             this.Text = "loading";
+            this.Load += new System.EventHandler(this.loadingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar2;
+        public System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label loadinLabel;
     }
 }

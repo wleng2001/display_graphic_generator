@@ -23,15 +23,20 @@ namespace display_graphic_generator
 
         void generateMatrix(buttonMatrix m)
         {
+            loadingForm loadingForm = new loadingForm(widthResolution*heightResolution);
+            loadingForm.Show();
+            loadingForm.Refresh();
             for (int i = 0; i < widthResolution; i++)
             {
                 for (int j = 0; j < heightResolution; j++)
                 {
+                    loadingForm.incrementProgressBar();
                     Button b = m[i, j];
-                    b.SendToBack();
                     Controls.Add(b);
+                    loadingForm.Refresh();
                 }
             }
+            loadingForm.Dispose();
         }
         public FormGraphicDisplay()
         {
