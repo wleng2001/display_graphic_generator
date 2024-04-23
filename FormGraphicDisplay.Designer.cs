@@ -38,7 +38,6 @@
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixDimensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dimensions128x64ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensions48x48ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensions10x10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimensionsOwnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,41 +117,33 @@
             this.whiteToolStripMenuItem.Checked = true;
             this.whiteToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.whiteToolStripMenuItem.Text = "white";
             this.whiteToolStripMenuItem.Click += new System.EventHandler(this.whiteToolStripMenuItem_Click);
             // 
             // blueToolStripMenuItem
             // 
             this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-            this.blueToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.blueToolStripMenuItem.Text = "blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // yellowToolStripMenuItem
             // 
             this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.yellowToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.yellowToolStripMenuItem.Text = "yellow";
             this.yellowToolStripMenuItem.Click += new System.EventHandler(this.yellowToolStripMenuItem_Click);
             // 
             // matrixDimensionsToolStripMenuItem
             // 
             this.matrixDimensionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dimensions128x64ToolStripMenuItem,
             this.dimensions48x48ToolStripMenuItem,
             this.dimensions10x10ToolStripMenuItem,
             this.dimensionsOwnToolStripMenuItem});
             this.matrixDimensionsToolStripMenuItem.Name = "matrixDimensionsToolStripMenuItem";
             this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.matrixDimensionsToolStripMenuItem.Text = "matrix dimensions";
-            // 
-            // dimensions128x64ToolStripMenuItem
-            // 
-            this.dimensions128x64ToolStripMenuItem.Name = "dimensions128x64ToolStripMenuItem";
-            this.dimensions128x64ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.dimensions128x64ToolStripMenuItem.Text = "128x64";
-            this.dimensions128x64ToolStripMenuItem.Click += new System.EventHandler(this.dimensions128x64ToolStripMenuItem_Click);
             // 
             // dimensions48x48ToolStripMenuItem
             // 
@@ -274,7 +265,6 @@
         private System.Windows.Forms.ToolStripMenuItem matrixDimensionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem functionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoRefreshToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dimensions128x64ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dimensions48x48ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dimensions10x10ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dimensionsOwnToolStripMenuItem;

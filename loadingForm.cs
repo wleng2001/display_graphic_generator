@@ -33,6 +33,16 @@ namespace display_graphic_generator
             progressBar2.PerformStep();
         }
 
+        public void setLocation(int x, int y)
+        {
+            this.Location = new Point(x, y);
+        }
+
+        public void setLocation(Point p)
+        {
+            this.Location = p;
+        }
+
         private void progressBar2_Click(object sender, EventArgs e)
         {
 

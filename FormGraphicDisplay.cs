@@ -25,6 +25,7 @@ namespace display_graphic_generator
         {
             loadingForm loadingForm = new loadingForm(widthResolution*heightResolution);
             loadingForm.Show();
+            loadingForm.setLocation(this.Location.X+60, this.Location.Y+60);
             loadingForm.Refresh();
             for (int i = 0; i < widthResolution; i++)
             {
@@ -122,7 +123,6 @@ namespace display_graphic_generator
             if (!dimensions48x48ToolStripMenuItem.Checked)
             {
                 dimensions10x10ToolStripMenuItem.Checked = false;
-                dimensions128x64ToolStripMenuItem.Checked = false;
                 dimensions48x48ToolStripMenuItem.Checked = true;
                 dimensionsOwnToolStripMenuItem.Checked = false;
                 matrix.remove();
@@ -145,7 +145,6 @@ namespace display_graphic_generator
             if (!dimensions10x10ToolStripMenuItem.Checked)
             {
                 dimensions10x10ToolStripMenuItem.Checked = true;
-                dimensions128x64ToolStripMenuItem.Checked = false;
                 dimensions48x48ToolStripMenuItem.Checked = false;
                 dimensionsOwnToolStripMenuItem.Checked = false;
                 matrix.remove();
@@ -164,35 +163,11 @@ namespace display_graphic_generator
             }
         }
 
-        private void dimensions128x64ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!dimensions128x64ToolStripMenuItem.Checked)
-            {
-                dimensions10x10ToolStripMenuItem.Checked = false;
-                dimensions128x64ToolStripMenuItem.Checked = true;
-                dimensions48x48ToolStripMenuItem.Checked = false;
-                dimensionsOwnToolStripMenuItem.Checked = false;
-                matrix.remove();
-                heightResolution = 128;
-                widthResolution = 64;
-                matrix.ButtonWidth = 2;
-                matrix.ButtonHeight = 2;
-                xLocation = 20;
-                yLocation = 40;
-                matrix = new buttonMatrix(widthResolution, heightResolution);
-                matrix.setLocation(xLocation, yLocation);
-                generateMatrix(matrix);
-                matrix.ShineColor = shineColor;
-                matrix.muteColor = muteColor;
-            }
-        }
-
         private void dimensionsOwnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(!dimensionsOwnToolStripMenuItem.Checked)
             {
                 dimensions10x10ToolStripMenuItem.Checked = false;
-                dimensions128x64ToolStripMenuItem.Checked = false;
                 dimensions48x48ToolStripMenuItem.Checked = false;
                 dimensionsOwnToolStripMenuItem.Checked = true;
             }

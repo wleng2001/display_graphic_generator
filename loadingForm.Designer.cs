@@ -57,8 +57,10 @@
             this.ClientSize = new System.Drawing.Size(542, 158);
             this.Controls.Add(this.loadinLabel);
             this.Controls.Add(this.progressBar2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "loadingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loading";
             this.Load += new System.EventHandler(this.loadingForm_Load);
             this.ResumeLayout(false);

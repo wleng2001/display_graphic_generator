@@ -105,7 +105,6 @@ namespace display_graphic_generator
         public bool update = true;
         public delegate void buttonClickTask(bool update);
         public buttonClickTask ButtonClickTask;
-        loadingForm LoadingForm;
 
         int takeNumber(string text, int place)
         {
@@ -226,15 +225,10 @@ namespace display_graphic_generator
         }
         public void remove()
         {
-            LoadingForm = new loadingForm(col * row);
-            LoadingForm.Show();
-            LoadingForm.Refresh();
             foreach (Button b in buttons)
             {
                 b.Dispose();
-                LoadingForm.incrementProgressBar();
             }
-            LoadingForm.Dispose();
         }
     }
 }
