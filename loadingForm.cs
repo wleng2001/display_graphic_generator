@@ -27,6 +27,10 @@ namespace display_graphic_generator
             InitializeComponent();
             setProgressBarRange(range, step);
         }
+        public loadingForm()
+        {
+            InitializeComponent();
+        }
 
         public void incrementProgressBar()
         {

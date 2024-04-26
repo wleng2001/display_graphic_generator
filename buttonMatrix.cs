@@ -62,7 +62,11 @@ namespace display_graphic_generator
                 }
             }
         }
-        bool[,] status;
+        private bool[,] status;
+        public bool[,] Status
+        {
+            get { return status; }
+        }
         public Color muteColor = Color.Gray;
         public Color MuteColor
         {

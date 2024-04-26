@@ -20,12 +20,18 @@ namespace display_graphic_generator
         int heightResolution = 48;
         int widthResolution = 48;
         buttonMatrix matrix;
-
+        loadingForm loadingForm = new loadingForm();
+        bool autoRefresh = true;
+        
+        void updateLoadingFormLoc()
+        {
+            loadingForm.setLocation(this.Location.X + (this.Width - loadingForm.Width) / 2, this.Location.Y + (this.Height - loadingForm.Height) / 2);
+        }
         void generateMatrix(buttonMatrix m)
         {
-            loadingForm loadingForm = new loadingForm(widthResolution*heightResolution);
+            loadingForm.setProgressBarRange(widthResolution * heightResolution);
+            updateLoadingFormLoc();
             loadingForm.Show();
-            loadingForm.setLocation(this.Location.X+60, this.Location.Y+60);
             loadingForm.Refresh();
             for (int i = 0; i < widthResolution; i++)
             {
@@ -37,14 +43,16 @@ namespace display_graphic_generator
                     loadingForm.Refresh();
                 }
             }
-            loadingForm.Dispose();
+            loadingForm.Hide();
         }
         public FormGraphicDisplay()
         {
             InitializeComponent();
+            updateLoadingFormLoc();
             matrix = new buttonMatrix(widthResolution, heightResolution);
             matrix.setLocation(xLocation, yLocation);
             matrix.showButton();
+            matrix.ButtonClickTask += this.generateTabContent;
             generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
 
         }
@@ -67,6 +75,7 @@ namespace display_graphic_generator
         private void clearButton_Click(object sender, EventArgs e)
         {
             matrix.restart();
+            generateTabContent(autoRefresh);
         }
 
         private void tabContentTextBox_TextChanged(object sender, EventArgs e)
@@ -116,6 +125,8 @@ namespace display_graphic_generator
         private void negativeButton_Click(object sender, EventArgs e)
         {
             matrix.restart(true);
+            generateTabContent(autoRefresh);
+
         }
 
         private void generateMatrix(int xLocation, int yLocation, int xResolution, int yResolution, int buttonWidth, int buttonHeight)
@@ -145,6 +156,7 @@ namespace display_graphic_generator
                 widthResolution = 48;
                 heightResolution = 48;
                 generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
+                generateTabContent(autoRefresh);
             }
         }
 
@@ -157,17 +169,12 @@ namespace display_graphic_generator
                 dimensionsOwnToolStripMenuItem.Checked = false;
                 matrix.remove();
                 matrix = new buttonMatrix(10, 10);
-                matrix.ButtonWidth = 20;
-                matrix.ButtonHeight = 20;
                 heightResolution = 10;
                 widthResolution = 10;
                 xLocation = 100;
                 yLocation = 100;
-                matrix.setLocation(xLocation, yLocation);
-                
-                generateMatrix(matrix);
-                matrix.ShineColor = shineColor;
-                matrix.muteColor = muteColor;
+                generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 20, 20);
+                generateTabContent(autoRefresh);
             }
         }
 
@@ -178,6 +185,82 @@ namespace display_graphic_generator
                 dimensions10x10ToolStripMenuItem.Checked = false;
                 dimensions48x48ToolStripMenuItem.Checked = false;
                 dimensionsOwnToolStripMenuItem.Checked = true;
+            }
+        }
+
+        void generateTabContent(bool refresh)
+        {
+            if (refresh)
+            {
+                loadingForm.setProgressBarRange(widthResolution * heightResolution);
+                updateLoadingFormLoc();
+                loadingForm.Show();
+                loadingForm.Refresh();
+                tabContentTextBox.Text = "const uint8_t PROGMEM " + tabNameTextBox.Text + "Width = "+widthResolution+";\r\n";
+                tabContentTextBox.Text += "const uint8_t PROGMEM " + tabNameTextBox.Text + "Width = " + heightResolution + ";\r\n";
+                tabContentTextBox.Text += "const unsigned char PROGMEM "+tabNameTextBox.Text+"[] = {\r\n";
+                for(int i = heightResolution-1; i >= 0 ; i--)
+                {
+                    tabContentTextBox.Text += "\t";
+                    byte bitNumber = 0;
+                    for(int j = widthResolution-1; j >=0 ; j--)
+                    {
+                        loadingForm.incrementProgressBar();
+                        if (bitNumber == 0)
+                        {
+                            tabContentTextBox.Text += "0b";
+                        }
+                        if (matrix.Status[i, j] == true)
+                        {
+                            tabContentTextBox.Text += "1";
+                        }
+                        else
+                        {
+                            tabContentTextBox.Text+= "0";
+                        }
+                        if (bitNumber < 7 && j == 0)
+                        {
+                            for (int k = 0; k < 8 - bitNumber; k++)
+                            {
+                                tabContentTextBox.Text += "0";
+                            }
+                            bitNumber = 7;
+                        }
+                        if (bitNumber == 7)
+                        {
+                            tabContentTextBox.Text += ", ";
+                            bitNumber = 0;
+                        }
+                        else
+                        {
+                            bitNumber++;
+                        }
+                        loadingForm.Refresh();
+                    }
+                    tabContentTextBox.Text += "\r\n";
+                }
+                tabContentTextBox.Text += "}";
+                loadingForm.Hide();
+            }
+        }
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            generateTabContent(true);
+        }
+
+        private void autoRefreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autoRefreshToolStripMenuItem.Checked)
+            {
+                autoRefreshToolStripMenuItem.Checked = false;
+                autoRefresh = false;
+                matrix.update = false;
+            }
+            else
+            {
+                autoRefresh = true;
+                autoRefreshToolStripMenuItem.Checked= true;
+                matrix.update = true;
             }
         }
     }

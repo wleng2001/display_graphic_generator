@@ -30,7 +30,7 @@
         {
             this.tabNameTextBox = new System.Windows.Forms.TextBox();
             this.tabNameLabel = new System.Windows.Forms.Label();
-            this.confirmButton = new System.Windows.Forms.Button();
+            this.generateButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,14 +72,15 @@
             this.tabNameLabel.Text = "table name";
             this.tabNameLabel.Click += new System.EventHandler(this.tabNameLabel_Click);
             // 
-            // confirmButton
+            // generateButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(694, 415);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(90, 33);
-            this.confirmButton.TabIndex = 2;
-            this.confirmButton.Text = "confirm";
-            this.confirmButton.UseVisualStyleBackColor = true;
+            this.generateButton.Location = new System.Drawing.Point(694, 415);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(90, 33);
+            this.generateButton.TabIndex = 2;
+            this.generateButton.Text = "generate";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
             // menuStrip1
             // 
@@ -109,7 +110,7 @@
             this.blueToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.colorToolStripMenuItem.Text = "color";
             // 
             // whiteToolStripMenuItem
@@ -142,7 +143,7 @@
             this.dimensions10x10ToolStripMenuItem,
             this.dimensionsOwnToolStripMenuItem});
             this.matrixDimensionsToolStripMenuItem.Name = "matrixDimensionsToolStripMenuItem";
-            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.matrixDimensionsToolStripMenuItem.Text = "matrix dimensions";
             // 
             // dimensions48x48ToolStripMenuItem
@@ -150,21 +151,21 @@
             this.dimensions48x48ToolStripMenuItem.Checked = true;
             this.dimensions48x48ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.dimensions48x48ToolStripMenuItem.Name = "dimensions48x48ToolStripMenuItem";
-            this.dimensions48x48ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dimensions48x48ToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.dimensions48x48ToolStripMenuItem.Text = "48x48";
             this.dimensions48x48ToolStripMenuItem.Click += new System.EventHandler(this.dimensions48x48ToolStripMenuItem_Click);
             // 
             // dimensions10x10ToolStripMenuItem
             // 
             this.dimensions10x10ToolStripMenuItem.Name = "dimensions10x10ToolStripMenuItem";
-            this.dimensions10x10ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dimensions10x10ToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.dimensions10x10ToolStripMenuItem.Text = "10x10";
             this.dimensions10x10ToolStripMenuItem.Click += new System.EventHandler(this.dimensions10x10ToolStripMenuItem_Click);
             // 
             // dimensionsOwnToolStripMenuItem
             // 
             this.dimensionsOwnToolStripMenuItem.Name = "dimensionsOwnToolStripMenuItem";
-            this.dimensionsOwnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dimensionsOwnToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.dimensionsOwnToolStripMenuItem.Text = "own";
             this.dimensionsOwnToolStripMenuItem.Click += new System.EventHandler(this.dimensionsOwnToolStripMenuItem_Click);
             // 
@@ -181,8 +182,9 @@
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
+            this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
             // tabContentTextBox
             // 
@@ -191,6 +193,7 @@
             this.tabContentTextBox.Location = new System.Drawing.Point(507, 113);
             this.tabContentTextBox.Multiline = true;
             this.tabContentTextBox.Name = "tabContentTextBox";
+            this.tabContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tabContentTextBox.Size = new System.Drawing.Size(280, 296);
             this.tabContentTextBox.TabIndex = 4;
             this.tabContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
@@ -234,7 +237,7 @@
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.tableContentLabel);
             this.Controls.Add(this.tabContentTextBox);
-            this.Controls.Add(this.confirmButton);
+            this.Controls.Add(this.generateButton);
             this.Controls.Add(this.tabNameLabel);
             this.Controls.Add(this.tabNameTextBox);
             this.Controls.Add(this.menuStrip1);
@@ -255,7 +258,7 @@
 
         private System.Windows.Forms.TextBox tabNameTextBox;
         private System.Windows.Forms.Label tabNameLabel;
-        private System.Windows.Forms.Button confirmButton;
+        private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
