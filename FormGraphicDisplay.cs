@@ -134,6 +134,7 @@ namespace display_graphic_generator
         {
             heightResolution = yResolution;
             widthResolution = xResolution;
+            matrix.remove();
             matrix = new buttonMatrix(widthResolution, heightResolution);
             matrix.ButtonWidth = buttonWidth;
             matrix.ButtonHeight = buttonHeight;
@@ -151,7 +152,6 @@ namespace display_graphic_generator
                 dimensions10x10ToolStripMenuItem.Checked = false;
                 dimensions48x48ToolStripMenuItem.Checked = true;
                 dimensionsOwnToolStripMenuItem.Checked = false;
-                matrix.remove();
                 xLocation = 23;
                 yLocation = 25;
                 widthResolution = 48;
@@ -168,7 +168,6 @@ namespace display_graphic_generator
                 dimensions10x10ToolStripMenuItem.Checked = true;
                 dimensions48x48ToolStripMenuItem.Checked = false;
                 dimensionsOwnToolStripMenuItem.Checked = false;
-                matrix.remove();
                 heightResolution = 10;
                 widthResolution = 10;
                 xLocation = 100;
@@ -183,9 +182,9 @@ namespace display_graphic_generator
             dimensions10x10ToolStripMenuItem.Checked = false;
             dimensions48x48ToolStripMenuItem.Checked = false;
             dimensionsOwnToolStripMenuItem.Checked = true;
-            matrix.remove();
             dimensionsForm f = new dimensionsForm(this);
             f.Show();
+            f.Location = new Point(this.Location.X+(this.Width-f.Width)/2, this.Location.Y+(this.Height-f.Height)/2);
         }
 
         public void generateTabContent(bool refresh)
