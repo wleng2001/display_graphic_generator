@@ -53,21 +53,21 @@
             // 
             // tabNameTextBox
             // 
-            this.tabNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.tabNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.tabNameTextBox.Location = new System.Drawing.Point(419, 58);
             this.tabNameTextBox.Name = "tabNameTextBox";
             this.tabNameTextBox.Size = new System.Drawing.Size(334, 27);
             this.tabNameTextBox.TabIndex = 0;
             this.tabNameTextBox.Text = "tabName";
             this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_Enter);
-            this.tabNameTextBox.Enter += new System.EventHandler(this.tabNameTextBox_Enter);
             // 
             // tabContentTextBox
             // 
             this.tabContentTextBox.AcceptsTab = true;
-            this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabContentTextBox.Location = new System.Drawing.Point(419, 116);
@@ -102,7 +102,7 @@
             this.generateButton.Location = new System.Drawing.Point(662, 390);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(91, 39);
-            this.generateButton.TabIndex = 50;
+            this.generateButton.TabIndex = 4;
             this.generateButton.Text = "generate";
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.button41_Click);
@@ -115,7 +115,7 @@
             this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -177,7 +177,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
             this.quantityOfMatrixToolStripMenuItem.Click += new System.EventHandler(this.quantityOfMatrixToolStripMenuItem_Click);
             // 
@@ -186,7 +186,7 @@
             this.toolStripMenuItem2.Checked = true;
             this.toolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
             this.toolStripMenuItem2.Text = "1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -228,7 +228,7 @@
             this.negativeButton.Location = new System.Drawing.Point(541, 390);
             this.negativeButton.Name = "negativeButton";
             this.negativeButton.Size = new System.Drawing.Size(91, 39);
-            this.negativeButton.TabIndex = 52;
+            this.negativeButton.TabIndex = 3;
             this.negativeButton.Text = "negative";
             this.negativeButton.UseVisualStyleBackColor = true;
             this.negativeButton.Click += new System.EventHandler(this.button1_Click_1);
@@ -238,7 +238,7 @@
             this.clearButton.Location = new System.Drawing.Point(419, 390);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(91, 39);
-            this.clearButton.TabIndex = 53;
+            this.clearButton.TabIndex = 2;
             this.clearButton.Text = "clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
