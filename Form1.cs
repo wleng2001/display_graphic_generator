@@ -43,24 +43,26 @@ namespace display_graphic_generator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form Form;
             if (radioLcd16x2.Checked)
             {
-                var Form = new FormLcd16x2();
-                Form.Show();
+                Form = new FormLcd16x2();
+
             }
             else
             {
                 if (radioGraphicDisplay.Checked)
                 {
-                    var Form = new FormGraphicDisplay();
-                    Form.Show();
+                    Form = new FormGraphicDisplay();
                 }
                 else
                 {
-                    var Form = new Form7Segment();
-                    Form.Show();
+                    Form = new Form7Segment();
                 }
+
             }
+            Form.Show();
+            Form.Location = this.Location;
         }
     }
 }
