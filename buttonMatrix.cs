@@ -28,7 +28,7 @@ namespace display_graphic_generator
         {
             get
             {
-                return buttons[row, col];
+                return buttons[col, row];
             }
             set { }
         }
@@ -107,7 +107,7 @@ namespace display_graphic_generator
         }
         public Color borderColor = Color.FromArgb(64,64,64);
         public bool update = true;
-        public delegate void buttonClickTask(bool update);
+        public delegate void buttonClickTask(bool refresh);
         public buttonClickTask ButtonClickTask;
 
         int takeNumber(string text, int place)
@@ -144,8 +144,8 @@ namespace display_graphic_generator
         }
         public buttonMatrix(int col, int row)
         {
-            this.col = row;
-            this.row = col;
+            this.col = col;
+            this.row = row;
             buttons = new Button[this.col, this.row];
             status = new bool[this.col, this.row];
             for(int i = 0; i< buttons.GetLength(0); i++)
@@ -160,6 +160,7 @@ namespace display_graphic_generator
                     b.Name = i + " " + j;
                     b.Click += buttonClick;
                     b.Size  = new Size(buttonWidth, buttonHeight);
+                    b.TabStop = false;
                 }
 
             }

@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -84,6 +84,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="dimensionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dimensionsWindow.Designer.cs">
+      <DependentUpon>dimensionsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="loadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dimensionsWindow.resx">
+      <DependentUpon>dimensionsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loadingForm.resx">
       <DependentUpon>loadingForm.cs</DependentUpon>

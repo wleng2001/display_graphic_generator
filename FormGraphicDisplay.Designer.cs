@@ -77,7 +77,7 @@
             this.generateButton.Location = new System.Drawing.Point(694, 415);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(90, 33);
-            this.generateButton.TabIndex = 2;
+            this.generateButton.TabIndex = 4;
             this.generateButton.Text = "generate";
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.confirmButton_Click);
@@ -110,7 +110,7 @@
             this.blueToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.colorToolStripMenuItem.Text = "color";
             // 
             // whiteToolStripMenuItem
@@ -143,7 +143,7 @@
             this.dimensions10x10ToolStripMenuItem,
             this.dimensionsOwnToolStripMenuItem});
             this.matrixDimensionsToolStripMenuItem.Name = "matrixDimensionsToolStripMenuItem";
-            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.matrixDimensionsToolStripMenuItem.Text = "matrix dimensions";
             // 
             // dimensions48x48ToolStripMenuItem
@@ -182,7 +182,7 @@
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
             this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
@@ -195,7 +195,7 @@
             this.tabContentTextBox.Name = "tabContentTextBox";
             this.tabContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tabContentTextBox.Size = new System.Drawing.Size(280, 296);
-            this.tabContentTextBox.TabIndex = 4;
+            this.tabContentTextBox.TabIndex = 1;
             this.tabContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
             // tableContentLabel
@@ -213,7 +213,7 @@
             this.clearButton.Location = new System.Drawing.Point(507, 415);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(90, 33);
-            this.clearButton.TabIndex = 6;
+            this.clearButton.TabIndex = 2;
             this.clearButton.Text = "clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
@@ -223,7 +223,7 @@
             this.negativeButton.Location = new System.Drawing.Point(601, 415);
             this.negativeButton.Name = "negativeButton";
             this.negativeButton.Size = new System.Drawing.Size(90, 33);
-            this.negativeButton.TabIndex = 7;
+            this.negativeButton.TabIndex = 3;
             this.negativeButton.Text = "negative";
             this.negativeButton.UseVisualStyleBackColor = true;
             this.negativeButton.Click += new System.EventHandler(this.negativeButton_Click);

@@ -21,7 +21,7 @@ namespace display_graphic_generator
         int widthResolution = 48;
         buttonMatrix matrix;
         loadingForm loadingForm = new loadingForm();
-        bool autoRefresh = true;
+        public bool autoRefresh = true;
         
         void updateLoadingFormLoc()
         {
@@ -52,8 +52,9 @@ namespace display_graphic_generator
             matrix = new buttonMatrix(widthResolution, heightResolution);
             matrix.setLocation(xLocation, yLocation);
             matrix.showButton();
-            matrix.ButtonClickTask += this.generateTabContent;
+            matrix.ButtonClickTask = generateTabContent;
             generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
+            generateTabContent(true);
 
         }
 
@@ -129,7 +130,7 @@ namespace display_graphic_generator
 
         }
 
-        private void generateMatrix(int xLocation, int yLocation, int xResolution, int yResolution, int buttonWidth, int buttonHeight)
+        public void generateMatrix(int xLocation, int yLocation, int xResolution, int yResolution, int buttonWidth, int buttonHeight)
         {
             heightResolution = yResolution;
             widthResolution = xResolution;
@@ -168,7 +169,6 @@ namespace display_graphic_generator
                 dimensions48x48ToolStripMenuItem.Checked = false;
                 dimensionsOwnToolStripMenuItem.Checked = false;
                 matrix.remove();
-                matrix = new buttonMatrix(10, 10);
                 heightResolution = 10;
                 widthResolution = 10;
                 xLocation = 100;
@@ -180,55 +180,56 @@ namespace display_graphic_generator
 
         private void dimensionsOwnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!dimensionsOwnToolStripMenuItem.Checked)
-            {
-                dimensions10x10ToolStripMenuItem.Checked = false;
-                dimensions48x48ToolStripMenuItem.Checked = false;
-                dimensionsOwnToolStripMenuItem.Checked = true;
-            }
+            dimensions10x10ToolStripMenuItem.Checked = false;
+            dimensions48x48ToolStripMenuItem.Checked = false;
+            dimensionsOwnToolStripMenuItem.Checked = true;
+            matrix.remove();
+            dimensionsForm f = new dimensionsForm(this);
+            f.Show();
         }
 
-        void generateTabContent(bool refresh)
+        public void generateTabContent(bool refresh)
         {
             if (refresh)
             {
+                String text = "";
                 loadingForm.setProgressBarRange(widthResolution * heightResolution);
                 updateLoadingFormLoc();
                 loadingForm.Show();
                 loadingForm.Refresh();
-                tabContentTextBox.Text = "const uint8_t PROGMEM " + tabNameTextBox.Text + "Width = "+widthResolution+";\r\n";
-                tabContentTextBox.Text += "const uint8_t PROGMEM " + tabNameTextBox.Text + "Width = " + heightResolution + ";\r\n";
-                tabContentTextBox.Text += "const unsigned char PROGMEM "+tabNameTextBox.Text+"[] = {\r\n";
-                for(int i = heightResolution-1; i >= 0 ; i--)
+                text = "const uint8_t PROGMEM " + tabNameTextBox.Text + "Width = "+widthResolution+";\r\n";
+                text += "const uint8_t PROGMEM " + tabNameTextBox.Text + "Height = " + heightResolution + ";\r\n";
+                text += "const unsigned char PROGMEM "+tabNameTextBox.Text+"[] = {\r\n";
+                for(int i = 0; i < heightResolution ; i++)
                 {
-                    tabContentTextBox.Text += "\t";
+                    text += "\t";
                     byte bitNumber = 0;
-                    for(int j = widthResolution-1; j >=0 ; j--)
+                    for(int j = 0; j < widthResolution ; j++)
                     {
                         loadingForm.incrementProgressBar();
                         if (bitNumber == 0)
                         {
-                            tabContentTextBox.Text += "0b";
+                            text += "0b";
                         }
-                        if (matrix.Status[i, j] == true)
+                        if (matrix.Status[j, i] == true)
                         {
-                            tabContentTextBox.Text += "1";
+                            text += "1";
                         }
                         else
                         {
-                            tabContentTextBox.Text+= "0";
+                            text += "0";
                         }
-                        if (bitNumber < 7 && j == 0)
+                        if (bitNumber < 7 && j == widthResolution-1)
                         {
-                            for (int k = 0; k < 8 - bitNumber; k++)
+                            for (int k = 0; k < 7 - bitNumber; k++)
                             {
-                                tabContentTextBox.Text += "0";
+                                text += "0";
                             }
                             bitNumber = 7;
                         }
                         if (bitNumber == 7)
                         {
-                            tabContentTextBox.Text += ", ";
+                            text += ", ";
                             bitNumber = 0;
                         }
                         else
@@ -237,9 +238,10 @@ namespace display_graphic_generator
                         }
                         loadingForm.Refresh();
                     }
-                    tabContentTextBox.Text += "\r\n";
+                    text += "\r\n";
                 }
-                tabContentTextBox.Text += "}";
+                text += "};";
+                tabContentTextBox.Text = text;
                 loadingForm.Hide();
             }
         }
