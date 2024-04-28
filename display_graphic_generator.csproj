@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -77,11 +77,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="buttonMatrix.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dimensionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dimensionsWindow.Designer.cs">
+      <DependentUpon>dimensionsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingForm.Designer.cs">
+      <DependentUpon>loadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form7Segment.cs">
       <SubType>Form</SubType>
@@ -108,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dimensionsWindow.resx">
+      <DependentUpon>dimensionsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingForm.resx">
+      <DependentUpon>loadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form7Segment.resx">
       <DependentUpon>Form7Segment.cs</DependentUpon>

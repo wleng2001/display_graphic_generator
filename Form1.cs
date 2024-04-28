@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace display_graphic_generator
 {
+    
     public partial class chooseDisplayForm : Form
     {
+        public Color ForeGroundColor = Color.FromKnownColor(KnownColor.Control);
         public chooseDisplayForm()
         {
             InitializeComponent();
