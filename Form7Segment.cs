@@ -21,15 +21,16 @@ namespace display_graphic_generator
         static int xLocationDisplayTwo = 65;
         byte displaysQuantity = 1;
         bool autoRefresh = true;
-        static segment7Display d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
-        static segment7Display d2 = new segment7Display(xLocationDisplayTwo+130, yLocationDisplay);
-        segment7Display[] d =
-        {
-            d1, d2
-        };
+        segment7Display d1;
+        segment7Display d2;
+        segment7Display[] d = new segment7Display[2];
         Color shineColor = Color.Red;
         public Form7Segment()
         {
+            d1 = new segment7Display(xLocationDisplayAlone, yLocationDisplay);
+            d2 = new segment7Display(xLocationDisplayTwo + 130, yLocationDisplay);
+            d[0] = d1;
+            d[1] = d2;
             InitializeComponent();
             for(int i = 0; i < 8; i++)
             {
