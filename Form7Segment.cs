@@ -259,6 +259,16 @@ namespace display_graphic_generator
             }
             generateTextBoxContent(autoRefresh);
         }
+
+        private void varName7textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void varContentLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     };
 
     public class segment7Display
