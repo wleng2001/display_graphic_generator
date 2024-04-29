@@ -51,7 +51,7 @@ namespace display_graphic_generator
 
         byte width = 20;
         byte height = 20;
-        byte x = 100;
+        byte x = 120;
         byte y = 100;
         static byte quantityOfMatrix = 1;
         Button[,,] buttons = new Button[quantityOfMatrix,8,5];
@@ -166,14 +166,14 @@ namespace display_graphic_generator
                     break;
 
                 case 2:
-                    generateButtonMatrix(1,(byte)(x-40), y);
-                    generateButtonMatrix(2,(byte)(x - 40 + width * 5 + 5), y);
+                    generateButtonMatrix(1,(byte)(x-60), y);
+                    generateButtonMatrix(2,(byte)(x - 60 + width * 5 + width), y);
                     break;
                 case 4:
-                    generateButtonMatrix(1,(byte)(x - 40), (byte)(y - 70));
-                    generateButtonMatrix(2,(byte)(x - 40+width*5+5), (byte)(y - 70));
-                    generateButtonMatrix(3,(byte)(x - 40), (byte)(y - 70+height*8+5));
-                    generateButtonMatrix(4,(byte)(x - 40 + width * 5 + 5), (byte)(y - 70 + height * 8 + 5));
+                    generateButtonMatrix(1,(byte)(x - 60), (byte)(y - 75));
+                    generateButtonMatrix(2,(byte)(x - 60+width*5+width), (byte)(y - 75));
+                    generateButtonMatrix(3,(byte)(x - 60), (byte)(y - 75+height*8+height));
+                    generateButtonMatrix(4,(byte)(x - 60 + width * 5 + width), (byte)(y - 75 + height * 8 + height));
                     break;
                 default:
                     break;

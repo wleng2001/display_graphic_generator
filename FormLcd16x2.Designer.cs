@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLcd16x2));
             this.tabNameTextBox = new System.Windows.Forms.TextBox();
             this.tabContentTextBox = new System.Windows.Forms.TextBox();
             this.tabNameLabel = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.tabNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.tabNameTextBox.Location = new System.Drawing.Point(419, 58);
+            this.tabNameTextBox.Location = new System.Drawing.Point(454, 58);
             this.tabNameTextBox.Name = "tabNameTextBox";
             this.tabNameTextBox.Size = new System.Drawing.Size(334, 27);
             this.tabNameTextBox.TabIndex = 0;
@@ -70,7 +71,7 @@
             this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabContentTextBox.Location = new System.Drawing.Point(419, 116);
+            this.tabContentTextBox.Location = new System.Drawing.Point(454, 116);
             this.tabContentTextBox.Multiline = true;
             this.tabContentTextBox.Name = "tabContentTextBox";
             this.tabContentTextBox.Size = new System.Drawing.Size(334, 268);
@@ -81,7 +82,7 @@
             // 
             this.tabNameLabel.AutoSize = true;
             this.tabNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabNameLabel.Location = new System.Drawing.Point(414, 30);
+            this.tabNameLabel.Location = new System.Drawing.Point(449, 30);
             this.tabNameLabel.Name = "tabNameLabel";
             this.tabNameLabel.Size = new System.Drawing.Size(108, 25);
             this.tabNameLabel.TabIndex = 2;
@@ -91,7 +92,7 @@
             // 
             this.tableContentLabel.AutoSize = true;
             this.tableContentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tableContentLabel.Location = new System.Drawing.Point(414, 88);
+            this.tableContentLabel.Location = new System.Drawing.Point(449, 88);
             this.tableContentLabel.Name = "tableContentLabel";
             this.tableContentLabel.Size = new System.Drawing.Size(123, 25);
             this.tableContentLabel.TabIndex = 3;
@@ -99,7 +100,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(662, 390);
+            this.generateButton.Location = new System.Drawing.Point(697, 390);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(91, 39);
             this.generateButton.TabIndex = 4;
@@ -115,7 +116,7 @@
             this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,7 +138,7 @@
             this.blueToolStripMenuItem,
             this.greyToolStripMenuItem});
             this.matrixColorToolStripMenuItem.Name = "matrixColorToolStripMenuItem";
-            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.matrixColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.matrixColorToolStripMenuItem.Text = "matrix color";
             // 
             // redToolStripMenuItem
@@ -177,7 +178,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem5});
             this.quantityOfMatrixToolStripMenuItem.Name = "quantityOfMatrixToolStripMenuItem";
-            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.quantityOfMatrixToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.quantityOfMatrixToolStripMenuItem.Text = "quantity of matrix";
             this.quantityOfMatrixToolStripMenuItem.Click += new System.EventHandler(this.quantityOfMatrixToolStripMenuItem_Click);
             // 
@@ -186,21 +187,21 @@
             this.toolStripMenuItem2.Checked = true;
             this.toolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem2.Text = "1";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem3.Text = "2";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(100, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem5.Text = "4";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -225,7 +226,7 @@
             // 
             // negativeButton
             // 
-            this.negativeButton.Location = new System.Drawing.Point(541, 390);
+            this.negativeButton.Location = new System.Drawing.Point(576, 390);
             this.negativeButton.Name = "negativeButton";
             this.negativeButton.Size = new System.Drawing.Size(91, 39);
             this.negativeButton.TabIndex = 3;
@@ -235,7 +236,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(419, 390);
+            this.clearButton.Location = new System.Drawing.Point(454, 390);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(91, 39);
             this.clearButton.TabIndex = 2;
@@ -258,6 +259,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormLcd16x2";
