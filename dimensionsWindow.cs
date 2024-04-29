@@ -27,7 +27,7 @@ namespace display_graphic_generator
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            int windowHeight = form.Height-50;
+            int windowHeight = form.Height-60;
             int windowWidth = form.Width - (form.Width-form.Controls["tabContentTextBox"].Location.X);
             int height;
             int width;
@@ -36,7 +36,7 @@ namespace display_graphic_generator
                 MessageBox.Show("Wrong format");
                 return;
             }
-            int buttonHeightAndWidth = 30;
+            int buttonHeightAndWidth = 300;
             int importantDim;
             int importantButtonQuantity;
             if(windowHeight-(buttonHeightAndWidth*height) < windowWidth - (buttonHeightAndWidth * width))
@@ -52,17 +52,22 @@ namespace display_graphic_generator
             while ((buttonHeightAndWidth * importantButtonQuantity) > importantDim)
             {
                 buttonHeightAndWidth--;
-                if(buttonHeightAndWidth < 1 || height*width>10000-20)
+                if(buttonHeightAndWidth < 3 || height*width>10000-20)
                 {
                     MessageBox.Show("Too big matrix");
                     return;
                 }
             }
             int xLocation = (windowWidth - buttonHeightAndWidth * width) / 2;
-            int yLocation = (windowHeight - buttonHeightAndWidth * height) / 2+22;
+            int yLocation = (windowHeight - buttonHeightAndWidth * height) / 2+25;
             form.generateMatrix(xLocation, yLocation, width, height, buttonHeightAndWidth, buttonHeightAndWidth);
             form.generateTabContent(form.autoRefresh);
             this.Close();
+        }
+
+        private void dimensionsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
