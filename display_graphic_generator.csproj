@@ -7,7 +7,7 @@
     <ProjectGuid>{C056F1D9-893E-48BC-A16E-8C5E33DFBB81}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>display_graphic_generator</RootNamespace>
-    <AssemblyName>display_graphic_generator</AssemblyName>
+    <AssemblyName>Display graphic generator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
