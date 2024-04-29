@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7Segment));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.appeaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,7 +154,7 @@
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
             this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
@@ -162,7 +163,7 @@
             this.negativeToolStripMenuItem.Checked = true;
             this.negativeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.negativeToolStripMenuItem.Text = "negative";
             this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
             // 
@@ -171,19 +172,20 @@
             this.varName7textBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.varName7textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.varName7textBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.varName7textBox.Location = new System.Drawing.Point(452, 96);
+            this.varName7textBox.Location = new System.Drawing.Point(452, 71);
             this.varName7textBox.Name = "varName7textBox";
             this.varName7textBox.Size = new System.Drawing.Size(323, 26);
             this.varName7textBox.TabIndex = 1;
             this.varName7textBox.Text = "varName";
             this.varName7textBox.ModifiedChanged += new System.EventHandler(this.varName7textBox_ModifiedChanged);
+            this.varName7textBox.TextChanged += new System.EventHandler(this.varName7textBox_TextChanged);
             this.varName7textBox.Enter += new System.EventHandler(this.varName7textBox_Enter);
             // 
             // varNameTextBox
             // 
             this.varNameTextBox.AutoSize = true;
             this.varNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.varNameTextBox.Location = new System.Drawing.Point(447, 68);
+            this.varNameTextBox.Location = new System.Drawing.Point(447, 43);
             this.varNameTextBox.Name = "varNameTextBox";
             this.varNameTextBox.Size = new System.Drawing.Size(134, 25);
             this.varNameTextBox.TabIndex = 2;
@@ -194,21 +196,22 @@
             // 
             this.varContentLabel.AutoSize = true;
             this.varContentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.varContentLabel.Location = new System.Drawing.Point(447, 127);
+            this.varContentLabel.Location = new System.Drawing.Point(447, 100);
             this.varContentLabel.Name = "varContentLabel";
             this.varContentLabel.Size = new System.Drawing.Size(149, 25);
             this.varContentLabel.TabIndex = 4;
             this.varContentLabel.Text = "variable content";
+            this.varContentLabel.Click += new System.EventHandler(this.varContentLabel_Click);
             // 
             // varContentTextBox
             // 
             this.varContentTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.varContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.varContentTextBox.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.varContentTextBox.Location = new System.Drawing.Point(452, 155);
+            this.varContentTextBox.Location = new System.Drawing.Point(451, 128);
             this.varContentTextBox.Multiline = true;
             this.varContentTextBox.Name = "varContentTextBox";
-            this.varContentTextBox.Size = new System.Drawing.Size(323, 235);
+            this.varContentTextBox.Size = new System.Drawing.Size(323, 262);
             this.varContentTextBox.TabIndex = 3;
             this.varContentTextBox.Text = "uint8_t varName0 = B11111111;";
             this.varContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
@@ -261,6 +264,7 @@
             this.Controls.Add(this.varName7textBox);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form7Segment";
