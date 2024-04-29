@@ -214,6 +214,26 @@ namespace display_graphic_generator
             restartButtons(negative);
         }
 
+        public void negative()
+        {
+            for (int i = 0; i < buttons.GetLength(0); i++)
+            {
+                for (int j = 0; j < buttons.GetLength(1); j++)
+                {
+                    if (status[i, j])
+                    {
+                        status[i, j] = false;
+                        buttons[i, j].BackColor = muteColor;
+                    }
+                    else
+                    {
+                        status[i, j] = true;
+                        buttons[i, j].BackColor = shineColor;
+                    }
+                }
+            }
+        }
+
         public void hideButtons()
         {
             foreach(Button button in buttons)

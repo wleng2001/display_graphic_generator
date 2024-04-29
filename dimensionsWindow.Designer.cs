@@ -115,6 +115,7 @@
             this.MinimizeBox = false;
             this.Name = "dimensionsForm";
             this.Text = "dimensions";
+            this.Load += new System.EventHandler(this.dimensionsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

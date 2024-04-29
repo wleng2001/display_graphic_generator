@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,9 @@ namespace display_graphic_generator
         buttonMatrix matrix;
         loadingForm loadingForm = new loadingForm();
         public bool autoRefresh = true;
+        private Color formBackColor = SystemColors.Control;
+        private Color textBoxColor = SystemColors.Window;
+        private Color textColor = SystemColors.WindowText;
         
         void updateLoadingFormLoc()
         {
@@ -55,6 +59,34 @@ namespace display_graphic_generator
             matrix.ButtonClickTask = generateTabContent;
             generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
             generateTabContent(true);
+
+        }
+        public FormGraphicDisplay(Color formBackColor, Color textBoxColor, Color fontColor)
+        {
+            InitializeComponent();
+            updateLoadingFormLoc();
+            matrix = new buttonMatrix(widthResolution, heightResolution);
+            matrix.setLocation(xLocation, yLocation);
+            matrix.showButton();
+            matrix.ButtonClickTask = generateTabContent;
+            generateMatrix(xLocation, yLocation, widthResolution, heightResolution, 7, 7);
+            generateTabContent(true);
+            this.formBackColor = formBackColor;
+            this.textBoxColor = textBoxColor;
+            this.textColor = fontColor;
+
+            this.BackColor = formBackColor;
+            tabNameLabel.ForeColor = textColor;
+            tabNameLabel.ForeColor = fontColor;
+            tableContentLabel.ForeColor = textColor;
+            tabContentTextBox.ForeColor = textColor;
+            tabContentTextBox.BackColor = textBoxColor;
+            clearButton.ForeColor = textColor;
+            clearButton.BackColor = textBoxColor;
+            negativeButton.ForeColor = textColor;
+            negativeButton.BackColor = textBoxColor;
+            generateButton.ForeColor = textColor;
+            generateButton.BackColor = textBoxColor;
 
         }
 
@@ -125,7 +157,7 @@ namespace display_graphic_generator
 
         private void negativeButton_Click(object sender, EventArgs e)
         {
-            matrix.restart(true);
+            matrix.negative();
             generateTabContent(autoRefresh);
 
         }
