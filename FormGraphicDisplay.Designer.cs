@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGraphicDisplay));
             this.tabNameTextBox = new System.Windows.Forms.TextBox();
             this.tabNameLabel = new System.Windows.Forms.Label();
             this.generateButton = new System.Windows.Forms.Button();
@@ -110,7 +111,7 @@
             this.blueToolStripMenuItem,
             this.yellowToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.colorToolStripMenuItem.Text = "color";
             // 
             // whiteToolStripMenuItem
@@ -143,7 +144,7 @@
             this.dimensions10x10ToolStripMenuItem,
             this.dimensionsOwnToolStripMenuItem});
             this.matrixDimensionsToolStripMenuItem.Name = "matrixDimensionsToolStripMenuItem";
-            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.matrixDimensionsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.matrixDimensionsToolStripMenuItem.Text = "matrix dimensions";
             // 
             // dimensions48x48ToolStripMenuItem
@@ -242,6 +243,7 @@
             this.Controls.Add(this.tabNameTextBox);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormGraphicDisplay";
