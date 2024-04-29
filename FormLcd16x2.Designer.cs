@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLcd16x2));
             this.tabNameTextBox = new System.Windows.Forms.TextBox();
             this.tabContentTextBox = new System.Windows.Forms.TextBox();
             this.tabNameLabel = new System.Windows.Forms.Label();
@@ -57,9 +58,9 @@
             this.tabNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabNameTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.tabNameTextBox.Location = new System.Drawing.Point(419, 58);
+            this.tabNameTextBox.Location = new System.Drawing.Point(454, 58);
             this.tabNameTextBox.Name = "tabNameTextBox";
-            this.tabNameTextBox.Size = new System.Drawing.Size(334, 27);
+            this.tabNameTextBox.Size = new System.Drawing.Size(333, 27);
             this.tabNameTextBox.TabIndex = 0;
             this.tabNameTextBox.Text = "tabName";
             this.tabNameTextBox.TextChanged += new System.EventHandler(this.tabNameTextBox_Enter);
@@ -70,10 +71,10 @@
             this.tabContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
             this.tabContentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabContentTextBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabContentTextBox.Location = new System.Drawing.Point(419, 116);
+            this.tabContentTextBox.Location = new System.Drawing.Point(454, 118);
             this.tabContentTextBox.Multiline = true;
             this.tabContentTextBox.Name = "tabContentTextBox";
-            this.tabContentTextBox.Size = new System.Drawing.Size(334, 268);
+            this.tabContentTextBox.Size = new System.Drawing.Size(333, 278);
             this.tabContentTextBox.TabIndex = 1;
             this.tabContentTextBox.TextChanged += new System.EventHandler(this.tabContentTextBox_TextChanged);
             // 
@@ -81,7 +82,7 @@
             // 
             this.tabNameLabel.AutoSize = true;
             this.tabNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabNameLabel.Location = new System.Drawing.Point(414, 30);
+            this.tabNameLabel.Location = new System.Drawing.Point(449, 30);
             this.tabNameLabel.Name = "tabNameLabel";
             this.tabNameLabel.Size = new System.Drawing.Size(108, 25);
             this.tabNameLabel.TabIndex = 2;
@@ -91,7 +92,7 @@
             // 
             this.tableContentLabel.AutoSize = true;
             this.tableContentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tableContentLabel.Location = new System.Drawing.Point(414, 88);
+            this.tableContentLabel.Location = new System.Drawing.Point(449, 88);
             this.tableContentLabel.Name = "tableContentLabel";
             this.tableContentLabel.Size = new System.Drawing.Size(123, 25);
             this.tableContentLabel.TabIndex = 3;
@@ -99,9 +100,9 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(662, 390);
+            this.generateButton.Location = new System.Drawing.Point(682, 404);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(91, 39);
+            this.generateButton.Size = new System.Drawing.Size(105, 39);
             this.generateButton.TabIndex = 4;
             this.generateButton.Text = "generate";
             this.generateButton.UseVisualStyleBackColor = true;
@@ -115,7 +116,7 @@
             this.functionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -225,9 +226,9 @@
             // 
             // negativeButton
             // 
-            this.negativeButton.Location = new System.Drawing.Point(541, 390);
+            this.negativeButton.Location = new System.Drawing.Point(568, 404);
             this.negativeButton.Name = "negativeButton";
-            this.negativeButton.Size = new System.Drawing.Size(91, 39);
+            this.negativeButton.Size = new System.Drawing.Size(105, 39);
             this.negativeButton.TabIndex = 3;
             this.negativeButton.Text = "negative";
             this.negativeButton.UseVisualStyleBackColor = true;
@@ -235,9 +236,9 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(419, 390);
+            this.clearButton.Location = new System.Drawing.Point(454, 404);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(91, 39);
+            this.clearButton.Size = new System.Drawing.Size(105, 39);
             this.clearButton.TabIndex = 2;
             this.clearButton.Text = "clear";
             this.clearButton.UseVisualStyleBackColor = true;
@@ -258,6 +259,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FormLcd16x2";
