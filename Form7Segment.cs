@@ -189,8 +189,9 @@ namespace display_graphic_generator
                 for (byte i = 0; i < displaysQuantity; i++)
                 {
                     varContentTextBox.Text += "uint8_t " + varName7textBox.Text+i+" = B";
-                    foreach (bool j in d[i].Status)
+                    for(byte k = 8; k>0; k--)
                     {
+                        bool j = d[i].Status[k-1];
                         if (j)
                         {
                             varContentTextBox.Text += "1";
