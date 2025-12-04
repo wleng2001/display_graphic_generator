@@ -42,6 +42,7 @@
             this.functionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.negativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.varName7textBox = new System.Windows.Forms.TextBox();
             this.varNameTextBox = new System.Windows.Forms.Label();
             this.varContentLabel = new System.Windows.Forms.Label();
@@ -144,17 +145,19 @@
             // 
             this.functionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.autoRefreshToolStripMenuItem,
-            this.negativeToolStripMenuItem});
+            this.negativeToolStripMenuItem,
+            this.msbToolStripMenuItem});
             this.functionsToolStripMenuItem.Name = "functionsToolStripMenuItem";
             this.functionsToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.functionsToolStripMenuItem.Text = "functions";
+            this.functionsToolStripMenuItem.Click += new System.EventHandler(this.functionsToolStripMenuItem_Click);
             // 
             // autoRefreshToolStripMenuItem
             // 
             this.autoRefreshToolStripMenuItem.Checked = true;
             this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.autoRefreshToolStripMenuItem.Text = "auto refresh";
             this.autoRefreshToolStripMenuItem.Click += new System.EventHandler(this.autoRefreshToolStripMenuItem_Click);
             // 
@@ -163,9 +166,16 @@
             this.negativeToolStripMenuItem.Checked = true;
             this.negativeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
-            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.negativeToolStripMenuItem.Text = "negative";
             this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
+            // 
+            // msbToolStripMenuItem
+            // 
+            this.msbToolStripMenuItem.Name = "msbToolStripMenuItem";
+            this.msbToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.msbToolStripMenuItem.Text = "MSB";
+            this.msbToolStripMenuItem.Click += new System.EventHandler(this.msbButton_Click);
             // 
             // varName7textBox
             // 
@@ -299,5 +309,6 @@
         private System.Windows.Forms.Button negativeButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.ToolStripMenuItem negativeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem msbToolStripMenuItem;
     }
 }

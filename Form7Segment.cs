@@ -21,6 +21,7 @@ namespace display_graphic_generator
         static int xLocationDisplayTwo = 65;
         byte displaysQuantity = 1;
         bool autoRefresh = true;
+        bool msbFirst = false;
         segment7Display d1;
         segment7Display d2;
         segment7Display[] d = new segment7Display[2];
@@ -189,16 +190,34 @@ namespace display_graphic_generator
                 for (byte i = 0; i < displaysQuantity; i++)
                 {
                     varContentTextBox.Text += "uint8_t " + varName7textBox.Text+i+" = 0b";
-                    for(byte k = 8; k>0; k--)
+                    if (msbFirst)
                     {
-                        bool j = d[i].Status[k-1];
-                        if (j)
+                        for (byte k = 0; k < 8; k++)
                         {
-                            varContentTextBox.Text += "1";
+                            bool j = d[i].Status[k];
+                            if (j)
+                            {
+                                varContentTextBox.Text += "1";
+                            }
+                            else
+                            {
+                                varContentTextBox.Text += "0";
+                            }
                         }
-                        else
+                    }
+                    else
+                    {
+                        for (byte k = 8; k > 0; k--)
                         {
-                            varContentTextBox.Text += "0";
+                            bool j = d[i].Status[k - 1];
+                            if (j)
+                            {
+                                varContentTextBox.Text += "1";
+                            }
+                            else
+                            {
+                                varContentTextBox.Text += "0";
+                            }
                         }
                     }
                     varContentTextBox.Text += ";\r\n";
@@ -261,12 +280,24 @@ namespace display_graphic_generator
             generateTextBoxContent(autoRefresh);
         }
 
+        private void msbButton_Click(object sender, EventArgs e)
+        {
+            msbFirst = !msbFirst;
+            msbToolStripMenuItem.Checked = msbFirst;
+            generateTextBoxContent(autoRefresh);
+        }
+
         private void varName7textBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void varContentLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void functionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
